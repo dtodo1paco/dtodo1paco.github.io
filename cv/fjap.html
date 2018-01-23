@@ -1,0 +1,1966 @@
+<html><head></head><body>
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paco Alías</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script lang="javascript">
+
+    var userLang = navigator.language || navigator.userLanguage;
+    var selectedLang = getParameterByName('lang');
+    if (selectedLang) {
+        userLang = selectedLang;
+    } else {
+        userLang = userLang.split('-')[0];
+    }
+    function monthsDiff(dt1, dt2) {
+        var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+        diff /= (60 * 60 * 24 * 7 * 4);
+        var m = Math.abs(Math.round(diff));
+        console.log("Diff ["+dt2+"] - ["+dt1+"] = " + m);
+        return m;
+    }
+    function monthDiff(d1, d2) {
+        var months;
+        months = (d2.getFullYear() - 1 - d1.getFullYear()) * 12;
+        months = months + 11 - d1.getMonth() + 1;
+        months = months + d2.getMonth();
+        /*
+        months -= d1.getMonth() + 1;
+        months += d2.getMonth();
+         */
+//        console.log("Diff ["+d2+"] - ["+d1+"] = " + months);
+        return months <= 0 ? 0 : months;
+    }
+    function monthsAgo(d1) {
+        var monthsDiff = monthDiff(d1, new Date());
+        return monthsDiff;
+    }
+
+    function getDuration(d1, d2) {
+        var monthsDiff = monthDiff(d1, d2);
+        var years = Math.floor(monthsDiff/12);
+        var months = monthsDiff % 12;
+        var str = "";
+        if (years > 0) {
+            str = years + ' ' + translate('year');
+            if (years > 1) {
+                str += "s ";
+            } else {
+                str += ' ';
+            }
+        }
+        if (months > 0) {
+            str = str + months + ' ' + translate('months');
+        }
+        return str;
+    }
+
+    function agesAgo(ref) {
+        try {
+            var year = parseInt(ref);
+            return (new Date()).getFullYear() - year;
+        } catch (err) {
+            return 0;
+        }
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function changeLang(lang) {
+        var selectedLang = getParameterByName('lang')
+        var url = window.location.href;
+        if (selectedLang) {
+            url = url.substr(0,url.indexOf('?lang'));
+        }
+        url = url + '?lang=' + lang;
+        location.replace(url);
+    }
+    const langMap = {
+        'jan':{
+            "en": "jan",
+            "es": "ene"
+        },
+        'apr':{
+            "en": "apr",
+            "es": "abr"
+        },
+        'aug':{
+            "en": "aug",
+            "es": "ago"
+        },
+        'dec':{
+            "en": "dec",
+            "es": "dic"
+        },
+        'about':{
+            "en":'about',
+            "es":'presentación'
+        },
+        'artificial-intelligence': {
+            "en": 'artificial intelligence',
+            "es": 'inteligencia artificial'
+        },
+        'ask-via-email':{
+            "en":'ask via email',
+            "es":'solicitar por correo'
+        },
+        'background':{
+            "en":'background',
+            "es":'historial'
+        },
+        'completion':{
+            "en":'completion',
+            "es":'finalizado'
+        },
+        'contact': {
+            "en": 'contact',
+            "es": 'contacto'
+        },
+        'databases':{
+            "en":'databases',
+            "es":'bases de datos'
+        },
+        'development':{
+            "en":'development',
+            "es":'desarrollo'
+        },
+        'development-team-manager':{
+            "en":'development team manager',
+            "es":'coordinador de equipo de desarrollo'
+        },
+        'education': {
+            "en": 'education',
+            "es": 'formación'
+        },
+        'effective-engineering': {
+            "en": 'effective engineering',
+            "es": 'ingeniería efectiva'
+        },
+        'english':{
+            "en":'english',
+            "es":'inglés'
+        },
+        'further-training': {
+            "en": 'further training',
+            "es": 'formación complementaria'
+        },
+        'history': {
+            "en": 'history',
+            "es": 'historia'
+        },
+        'interests':{
+            "en":'interests',
+            "es":'intereses'
+        },
+        'joined':{
+            "en":'joined',
+            "es":'desde'
+        },
+        'left':{
+            "en":'left',
+            "es":'hasta'
+        },
+        'management':{
+            "en":'management',
+            "es":'gestión'
+        },
+        'months': {
+            "en": 'months',
+            "es": 'meses'
+        },
+        'platforms':{
+            "en":'platforms',
+            "es":'plataformas'
+        },
+        'present': {
+            "en": 'present',
+            "es": 'Actualmente'
+        },
+        'publications': {
+            "en": 'publications',
+            "es": 'publicaciones'
+        },
+        'published-on': {
+            "en": 'published on',
+            "es": 'publicado en'
+        },
+        'self-employed': {
+            "en": 'self employed',
+            "es": 'autoempleado'
+        },
+        'senior-analyst': {
+            "en": 'senior analyst',
+            "es": 'analista senior'
+        },
+        'skills':{
+            "en":'skills',
+            "es":'conocimientos'
+        },
+        'software-engineer': {
+            "en": 'software engineer',
+            "es": 'ingeniero de software'
+        },
+        'spanish':{
+            "en":'spanish',
+            "es":'español'
+        },
+        'started':{
+            "en":'started',
+            "es":'inicio'
+        },
+        'tests-engineer': {
+            "en": 'QA engineer',
+            "es": 'ingeniero de pruebas (QA)'
+        },
+        'tests-manager': {
+            "en": 'QA manager',
+            "es": 'responsable de pruebas (QA)'
+        },
+        'translate-english':{
+            "en":'English',
+            "es":'Inglés'
+        },
+        'translate-spanish':{
+            "en":'Spanish',
+            "es":'Español'
+        },
+        'travelling':{
+            "en":'travelling',
+            "es":'viajar'
+        },
+        'volunteer-work': {
+            "en": 'volunteer work',
+            "es": 'Voluntariado'
+        },
+        'web-development': {
+            "en": 'web development',
+            "es": 'desarrollo web'
+        },
+        'web-developer-manager': {
+            "en": 'web developer manager',
+            "es": 'Coordinador de desarrollo web'
+        },
+        'work-experience': {
+            "en": 'work experience',
+            "es": 'experiencia laboral'
+        },
+        'writting': {
+            "en": 'writting',
+            "es": 'escribir'
+        },
+        'year': {
+            "en": 'year',
+            "es": 'año'
+        },
+        'years': {
+            "en": 'years',
+            "es": 'años'
+        },
+        'years-short': {
+            "en": 'yrs',
+            "es": 'años'
+        },
+        'years-working':{
+            "en":'years working',
+            "es":'años trabajando'
+        },
+        'dtodo1paco-volunteer-work-1.1':{
+            "en":'<strong>Web Developer</strong>',
+            "es":'<strong>Desarrollador web</strong>'
+        },
+        'dtodo1paco-volunteer-work-1.2':{
+            "en":'Portal Management. Coding of animal search engine using Liferay and AngularJS',
+            "es":'Gestión del portal. Codificación del buscador de animales usando Liferay y AngularJS'
+        },
+        'dtodo1paco-further-training-1.1':{
+            "en":'<strong>Previous training</strong>',
+            "es":'<strong>Formación anterior: cursos</strong>'
+        },
+        'dtodo1paco-further-training-2.1':{
+            "en":'<strong>Master: Executive Innovation Management</strong>,&nbsp;<a href="https://www.eoi.es/">EOI</a>',
+            "es":'<strong>Master: Gestión Ejecutiva de la Innovación</strong>,&nbsp;<a href="https://www.eoi.es/">EOI</a>'
+        },
+        'dtodo1paco-further-training-2.2':{
+            "en":'Presential and online. Innovation Management from different sides',
+            "es":'Presencial y online. Gestión de la innovación desde sus diferentes enfoques.'
+        },
+        'dtodo1paco-education-1.1':{
+            "en":'<strong>Computer Systems, Engineering</strong>,&nbsp;University of Salamanca',
+            "es":'<strong>Ingeniero Técnico en Informática de Sistemas</strong>,&nbsp;Universidad de Salamanca'
+        },
+        'dtodo1paco-education-1.2':{
+            "en":'Final year project: CTDC: Intranet services',
+            "es":'Proyecto final de carrera: CTDC: Servicios de Intranet'
+        },
+        'dtodo1paco-education-2.1':{
+            "en":'<strong>Information Technology, Engineering</strong>,&nbsp;University of Salamanca',
+            "es":'<strong>Ingeniería Superior en Informática</strong>,&nbsp;Universidad de Salamanca'
+        },
+        'dtodo1paco-education-2.2':{
+            "en":'Final year project: <a href="https://goo.gl/YLfXLj">MoRSA</a>: Organizational social model for software Agents  (with honors)',
+            "es":'Proyecto final de carrera: <a href="https://goo.gl/YLfXLj">MoRSA: Modelo de Organización Social para Agentes Software</a> (M.H.)'
+        },
+        'dtodo1paco-about': {
+            "en": "<p>During my varied professional career I have had the opportunity to obtain a complete and detailed view of the software development processes from different sides (analysis, equipment management, programming, databases, quality assurance, support, ...). I've done everything, so I consider I'm a full-strack engineer.</p><p>I always take care of doing things in the best way, because it makes easy to be changed. And surely, change will come, so it's better to be prepared</p><p>I have experience developing software related to #eHealth, I have participated in the design and development of a #telemonitoring platform for patients based on #Liferay able to integrate with other healthcare systems based on standards such as HL7, REST, SOAP, etc.<br/>Also I've worked in integrations using #Mirth as middleware coded with #javascript and #Java.</p><p>I have worked on document management platforms such as #Nuxeo, extending and adapting their capabilities as well as using its API from other technologies such as #python or #javascript.</p><p>For the last 5 years I've worked remotely with very satisfactory results.</p>",
+            "es": "<p>Durante mi variada carrera profesional, he tenido la oportunidad de trabajar en todos los procesos implicados en el desarrollo de software (análisis, diseño, programación, bases de datos, pruebas, soporte...). He hecho de todo y por eso me considero un ingeniero full-stack </p><p>Pongo mucho interés en que el trabajo esté bien hecho porque permite una mejor adaptación al cambio y el cambio llega seguro, así que mejor estar preparado.</p><p>Tengo experiencia desarrollando software sanitario (#eHealth), He participado en el diseño y desarrollo de una plataforma de #telemonitorización de pacientes basada en #Liferay capaz de integrarse con otros sistemas sanitarios basándose en standards como HL7, REST, SOAP, etc.<br>También he desarrollado integraciones usando #Mirth como intercambiador de mensajería programado en #javascript y #Java.</p><p>He trabajado en desarrollos para plataformas de gestión documental como #Nuxeo extendiendo y adaptando su funcionalidad así como haciendo uso de su API desde otras tecnologías como #javascript o #python.</p><p>Durante los últimos años he trabajado en modalidad de teletrabajo con buenos resultados.</p>"
+        },
+        'dtodo1paco-work-experience-8': {
+            "en": "<p>Wide experience in web platform development, specially with #Liferay & #Nuxeo and other opensource technologies such as #django, #drupal, #joomla, #wordpress,...</p><p>I offer my professional services as a web developer, consultant and software engineer to little companies. I've also cooperate in development of some other webs like <a href='http://apariv.com/perros' target='_blank'>APARiV</a> using #AngularJS and #Liferay to implement the adoption search engine and UI.</p><p>Currently I'm exploring the power of #React & #Liferay in some projects with success.</p>",
+            "es": "<p>Ámplia experiencia en desarrollo sobre plataformas web, especialmente #Liferay y #Nuxeo y otras de código abierto como #django, #drupal, #joomla, #wordpress...</p><p> Ofrezco mis servicios profesionales como desarrollador web, consultor e ingeniero de software a PYMES y particulares. También he colaborado en desarrollo de algunas webs como <a href='http://apariv.com/perros' target='_blank'>APARiV</a> utilizando #AngulasJS y #Liferay para implementar el buscador de adopciones y la interfaz de usuario. </p><p> Actualmente estoy explorando la potencia de #ReactJS integrado en #Liferay en algunos proyectos con buen resultado.</p>"
+        },
+        'dtodo1paco-work-experience-7': {
+            "en": "<ul><li>Plugin development for ECM platform using OSGi contribution model.</li><li>Corrective maintenance of information systems always oriented to product features that make the product better.</li><li>Module development to connect different technologies through API (REST, SOAP).</li><li>Build of a middleware module based on Mirth 3 to process medical messages and transform in useful information for hospitals.</li><li>Technologies used: Nuxeo (5.3.2 up to 8.10), Elasticsearch, Java, Python, Django, Bourne Shell, Mirth, Javascript, PostgreSQL, Mongodb, MySQL,...</li><li>Write specific programs to correct massive data, measuring time, space and other limiting resources.</li><li>Implement a devops framework to automate repeating tasks.</li><li>Monitoring and auto-recovering scripts to prevent or minimize service unavailability.</li></ul>",
+            "es": "<ul><li>Desarrollo de plugins para plataformas ECM utilizando el modelo OSGi</li><li>Mantenimiento correctivo de sistemas de información orientado siempre a la creación/modificación de módulos del producto de forma que contribuyan a la ampliación y mejora del mismo.</li><li>Desarrollo de módulos para conectar diferentes tecnologías usando API (REST, SOAP).</li><li>Construcción de módulos de middleware basados en Mirth 3 para procesar mensajería médica y transformarla en información útil para los hospitales.</li><li>Tecnologías: Nuxeo (5.3.2 hasta 8.10), Elasticsearch, Java, Python, Django, Bourne Shell, Mirth, Javascript, PostgreSQL, Mongodb, MySQL,...</li><li>Desarrollo de pequeños programas para corregir masivamente datos, medir tiempos y controlar espacio y otros recursos limitantes.</li><li>Implementar un framework DevOps para automatizar tareas repetitivas.</li><li>Monitorizar sistemas e implementar sistemas de auto-recuperado para prevenir o minimizar las indisponibilidades del servicio.</li></ul>"
+        },
+        'dtodo1paco-work-experience-6': {
+            "en": "<p>Design and implementation of a #telemedicine platform for intensive patient monitoring #Liferay based.<br/>Using microservices to upload medical tests from a Tablet app and to push alerts/alarms when a medical trigger is fired. Collect usage data and extract some indexes to improve performance.</p>",
+            "es": "<p>Diseño e implementación de una plataforma de #telemedicina para monitorización intensiva de pacientes basada en #Liferay.<br/>Utilizando microservicios para cargar pruebas médicas desde una aplicación de Tablet y para informar de alertas y alarmas cuando los resultados disparen una alerta médica. Recolección de datos de uso para extraer algunos índices que permitan mejorar el desempeño.</p>"
+        },
+        'dtodo1paco-work-experience-5': {
+            "en": "<p>Project Management #eHealth related. Analyst, developer, test engineer and support, directly managing with providers and customers.<br/> Coordinating integrations with medical systems using HL7, elaborating requirements and funcional analysis as well as QA plans.</p>",
+            "es": "<p>Gestión de proyectos relacionados con #eSalud. Funciones de analista, desarrollador, ingeniero de pruebas y soporte, tratando directamente con clientes y proveedores.<br/>Coordinación de integraciones entre sistemas médicos usando HL7 y elaborando análisis de requisitos y funcional así como planes de pruebas.</p>"
+        },
+        'dtodo1paco-work-experience-4': {
+            "en": "<p>Development team manager as well as analyst, developer and internal project manager. Client support on incidents.</p>",
+            "es": "<p>Coordinador de desarrollos internos, analista, desarrollador y gestor de equipo de desarrollo. Soporte a cliente en incidencias.</p>"
+        },
+        'dtodo1paco-work-experience-3': {
+            "en": "<ul><li>Conducting system tests and QA</li><li>Documentation and testing for a PDA connected to the backend and for the web interface to access it (double access).</li><li>Technologies: ORACLE, ORACLE-IAS, SunOS 5.9, Visual C ++, proxies, etc.</li></ul>",
+            "es": "<ul><li>Desarrollo y ejecución de planes de pruebas. Aseguramiento de la calidad.</li><li>Documentación y pruebas sobre una PDA conectada a un sistema y a una interfaz web de acceso</li><li>Technologies: ORACLE, ORACLE-IAS, SunOS 5.9, Visual C ++, proxies, etc.</li></ul>"
+        },
+        'dtodo1paco-work-experience-2': {
+            "en": "<ul><li>Management of a team of 4 people. Work management and task</li><li>Development of an information system for the monitoring of sheep products.</li><li>Adaptive system capable of evolving with the needs of the organization (configurable processes).</li><li>Information processing without fixed structure. Dynamic definition of data structures (metadata).</li><li>Obtaining reports and trace of the processes followed by the products.</li><li>Programming in Java and JSP.</li><li>Development of integration modules for external systems of the organization (billing, accounting, production ...)</li></ul>",
+            "es": "<ul><li>Gestión de trabajo de un equipo de desarrollo de 4 personas.</li><li>Desarrollo de un sistema de trazabilidad de productos del ovino.</li><li>Sistema adaptable capaz de evolucionar con las necesidades de la organizción (procesos configurables)</li><li>Procesamiento de información desestructurada. Definición dinámica de los datos (metadatos).</li><li>Sistema capaz de obtener informes y trazabilidad de cada proceso.</li><li> Programado en Java, JSP y Postgresql. Desarrollo de módulos de interconexión con sistemas externos (facturación, contabilidad, logística,...)</li></ul>"
+        },
+        'dtodo1paco-work-experience-1': {
+            "en": "<ul><li>Management of System Tests and QA</li><li>Installation and 1st level support</li><li>Shell script development for automate tasks</li></ul>",
+            "es": "<ul><li>Gestión de pruebas de sistema y aseguramiento de la calidad</li><li>Instalación de producto y primer nivel de soporte</li><li>Desarrollo de shell-scripts para automatizar tareas</li></ul>"
+        }
+    };
+    function translateCAP (text) {
+        return translate_to(userLang,text).toUpperCase();
+    }
+    function translateC (text) {
+        return capitalize(translate_to(userLang,text));
+    };
+
+    function translate (text) {
+        return translate_to(userLang,text);
+    };
+
+    function translate_to (lang, text) {
+        if (langMap[text]) {
+            return langMap[text][lang];
+        }
+        return text;
+    };
+    function capitalize(string) {
+        if (string != null && string.length > 1) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        return string;
+    }
+    function changeLanguage (element, event) {
+        var e = element; //document.getElementById("language-selector");
+        var value = e.options[e.selectedIndex].value;
+        changeLang(value);
+    }
+</script>
+
+<style>
+    .lang-wrapper {
+        text-align: center;
+    }
+
+    .button-group,
+    .button-group li{
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+    }
+
+    .button-group{
+        font-size: 0; /* Inline block elements gap - fix */
+        padding: 0;
+        background: rgba(0, 0, 0, .05);
+        box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, .07);
+        margin: auto;
+        border-radius: 5px;
+    }
+
+    .button-group li{
+        margin-right: -1px; /* Overlap each right button border */
+    }
+
+    .button-group .uibutton{
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        padding: 7px 17px;
+        margin: 0;
+        cursor: pointer;
+        border: 1px solid #bbb;
+        overflow: visible;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial;
+        -webkit-font-smoothing: antialiased;
+        text-decoration: none;
+        white-space: nowrap;
+        color: #777;
+        background: rgb(247,247,247); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(247,247,247,1) 0%, rgba(232,232,232,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,247,247,1)), color-stop(100%,rgba(232,232,232,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(232,232,232,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(232,232,232,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(232,232,232,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(232,232,232,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+        transition: background-color .2s ease-out;
+        background-clip: padding-box; /* Fix bleeding */
+        border-radius: 3px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, .3),
+        0 2px 2px -1px rgba(0, 0, 0, .5),
+        0 1px 0 rgba(255, 255, 255, .3) inset;
+        text-shadow: 0 1px 0 rgba(255,255,255, .9);
+        font-size: 13px; /* Set the font size, different from inherited 0 */
+        border-radius: 0;
+    }
+
+    .button-group .uibutton.active {
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset,
+        5px 0 5px -3px rgba(0, 0, 0, .2) inset,
+        -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+        background: rgb(132,132,132); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(132,132,132,1) 0%, rgba(178,178,178,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132,132,132,1)), color-stop(100%,rgba(178,178,178,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(132,132,132,1) 0%,rgba(178,178,178,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(132,132,132,1) 0%,rgba(178,178,178,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(132,132,132,1) 0%,rgba(178,178,178,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom, rgba(132,132,132,1) 0%,rgba(178,178,178,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#848484', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+        color: #fff;
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.6);
+        border: 1px solid #555;
+
+        -webkit-animation-name: activeAnimation;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: 1;
+    }
+
+    @-webkit-keyframes activeAnimation {
+        0%   { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    .button-group .uibutton:active{
+        background: #f0f0f0;
+    }
+
+    .button-group li:first-child .uibutton{
+        border-radius: 3px 0 0 3px;
+    }
+
+    .button-group li:first-child .uibutton.active{
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset,
+        -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    }
+
+    .button-group li:last-child .uibutton{
+        border-radius: 0 3px 3px 0;
+    }
+
+    .button-group li:last-child .uibutton.active{
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset,
+        5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    }
+p {
+  text-align: justify;
+}
+#skills > div.info > div > ul > li {
+  padding: 0;
+}
+.clear-margin {
+  margin: 0;
+}
+.space-top {
+  margin-top: 10px;
+}
+.space-right {
+  margin-right: 10px;
+}
+.icon-left {
+  margin-right: 5px;
+}
+.icon-right {
+  margin-left: 5px;
+}
+.labels {
+  word-spacing: 5px;
+  line-height: 2;
+}
+.label-keyword {
+  display: inline-block;
+  background: #7eb0db;
+  color: white;
+  font-size: 0.9em;
+  padding: 5px;
+  border: 1px solid #357ebd;
+}
+.link-disguise {
+  color: inherit;
+}
+.link-disguise:hover {
+  color: inherit;
+}
+@media (max-width: 992px) {
+  .clear-margin-sm {
+    margin-bottom: 0;
+  }
+}
+body {
+  font-family: 'Lato';
+  background: #f0f0f0;
+  color: #333333;
+}
+.main {
+  padding: 5px;
+}
+.card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  min-height: 300px;
+  padding: 10px;
+}
+.card-nested {
+  min-height: 0;
+  margin-bottom: 10px;
+  border-width: 1px 0 0 0;
+}
+.card-nested:before,
+.card-nested:after {
+  content: " ";
+  display: table;
+}
+.card-nested:after {
+  clear: both;
+}
+@media (max-width: 480px) {
+  .card-nested {
+    padding: 5px 0;
+  }
+}
+.background-card {
+  padding: 10px 20px;
+}
+.card-wrapper {
+  padding: 5px;
+}
+@media (max-width: 992px) {
+  .card-wrapper {
+    float: none !important;
+  }
+}
+.text-bolder {
+  font-weight: bold;
+}
+.background-details .detail {
+  display: table;
+  padding: 10px 0;
+}
+.background-details .detail .icon {
+  min-width: 45px;
+  max-width: 45px;
+  text-align: center;
+}
+.background-details .detail .info {
+  width: 100%;
+}
+.background-details .detail .title,
+.background-details .detail .icon {
+  color: #707070;
+}
+.background-details .detail .mobile-title {
+  display: none;
+}
+@media (max-width: 480px) {
+  .background-details .detail .mobile-title {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+}
+.background-details .detail .icon,
+.background-details .detail .info {
+  display: table-cell;
+  padding: 0 10px;
+}
+@media (max-width: 480px) {
+  .background-details .detail {
+    display: block;
+  }
+  .background-details .detail .icon {
+    max-width: inherit;
+    min-width: inherit;
+    text-align: left;
+  }
+  .background-details .detail .icon,
+  .background-details .detail .info {
+    display: block;
+    padding: 10px 0;
+  }
+  .background-details .detail .title {
+    display: none;
+  }
+}
+.info .content.has-sidebar {
+  width: 80%;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10px;
+  border-right: 1px solid #cdcdcd;
+}
+@media (max-width: 992px) {
+  .info .content.has-sidebar {
+    width: 100%;
+    border-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .info .content.has-sidebar {
+    padding: 0 2px;
+  }
+}
+.info .sidebar {
+  margin-left: 80%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+@media (max-width: 480px) {
+  ul {
+    padding-left: 25px;
+  }
+}
+/*
+    Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
+    Updated by: @dtodo1paco
+*/
+.floating-nav-trigger {
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  -webkit-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  display: block;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 10px;
+  background-color: white;
+  font-size: 1.5em;
+  color: #357ebd;
+  z-index: 100;
+  position: fixed;
+  top: 10px;
+  right: 15px;
+}
+.floating-nav-trigger .close-icon {
+  display: none;
+}
+.floating-nav-trigger:hover {
+  color: #1f496e;
+  background-color: #e6e6e6;
+  text-decoration: none;
+}
+.floating-nav-trigger.is-open {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.floating-nav-trigger.is-open .close-icon {
+  display: inherit;
+}
+.floating-nav-trigger.is-open .fa-bars {
+  display: none;
+}
+.floating-nav-trigger.is-open:hover {
+  background-color: white;
+}
+.floating-nav {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: transform 0.3s, visibility 0s 0.3s;
+  -o-transition: transform 0.3s, visibility 0s 0.3s;
+  transition: transform 0.3s, visibility 0s 0.3s;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  position: fixed;
+  z-index: 50;
+  right: 10px;
+  top: 10px;
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  visibility: hidden;
+  overflow: hidden;
+}
+.floating-nav ul {
+  font-size: 1.2em;
+  margin: 0;
+}
+.floating-nav ul li {
+  border-bottom: 1px solid #eff2f6;
+}
+.floating-nav ul li a {
+  padding: 20px;
+  text-decoration: none;
+  color: #357ebd;
+  display: block;
+}
+.floating-nav ul li a:hover {
+  color: #1f496e;
+}
+.floating-nav ul li i.fa {
+  margin-right: 10px;
+}
+.floating-nav ul li:last-child {
+  border-bottom: 0;
+}
+.floating-nav.is-visible {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: transform 0.3s, visibility 0s 0s;
+  -o-transition: transform 0.3s, visibility 0s 0s;
+  transition: transform 0.3s, visibility 0s 0s;
+  visibility: visible;
+}
+.profile-card-wrapper {
+  position: relative;
+}
+.profile-pic {
+  padding: 20px 0;
+}
+@media (max-width: 992px) {
+  .profile-pic {
+    padding: 10px 15px;
+  }
+  .profile-wrapper {
+    display: inline-flex;
+    width: 100%;
+  }
+  .name-and-profession {
+    padding-right: 2em;
+  }
+  .contact-details .detail {
+    padding-right: 2em;
+  }
+}
+@media (max-width: 500px) {
+  .profile-wrapper {
+    display: initial;
+  }
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+}
+@media (max-width: 992px) {
+  .name {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-details {
+    text-align: center;
+  }
+}
+.contact-details .detail {
+  display: table;
+  padding: 10px 0;
+}
+.contact-details .detail .icon {
+  padding: 0 10px;
+  color: #707070;
+}
+@media (max-width: 992px) {
+  .contact-details .detail .icon {
+    padding: 0 5px 0 0;
+  }
+}
+.contact-details .detail .info {
+  font-size: 0.8em;
+}
+.contact-details .detail .icon,
+.contact-details .detail .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media (max-width: 768px) {
+  .contact-details .detail {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .contact-details .detail {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+  }
+  .contact-details .detail .icon,
+  .contact-details .detail .info {
+    display: inline-block;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .contact-details .detail {
+    float: left;
+    width: 20%;
+  }
+}
+.social-links {
+  line-height: 2.5;
+  display: inline-flex;
+  width: 24%;
+  padding: 10px 10px;
+}
+.social-link {
+  margin-left: 5px;
+  min-width: 35px;
+  display: inline-block;
+}
+.social-link:first-child {
+  margin-left: 0;
+}
+.social-link:hover {
+  text-decoration: none;
+}
+.link-github {
+  color: #454545;
+}
+.link-github:hover,
+.link-github:focus {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+.link-twitter {
+  color: #33ccff;
+}
+.link-twitter:hover,
+.link-twitter:focus {
+  text-decoration: none;
+  color: #00bfff;
+}
+.link-blog {
+  color: #f36f24;
+}
+.link-blog:hover,
+.link-blog:focus {
+  text-decoration: none;
+  color: #d8560c;
+}
+.link-linkedin {
+  color: #007bb6;
+}
+.link-linkedin:hover,
+.link-linkedin:focus {
+  text-decoration: none;
+  color: #005983;
+}
+.link-skype {
+  color: #12a5f4;
+}
+.link-skype:hover,
+.link-skype:focus {
+  text-decoration: none;
+  color: #0986ca;
+}
+.link-stackoverflow {
+  color: #8e8e92;
+}
+.link-stackoverflow:hover,
+.link-stackoverflow:focus {
+  text-decoration: none;
+  color: #747479;
+}
+.link-soundcloud {
+  color: #0077B5;
+}
+.link-soundcloud:hover,
+.link-soundcloud:focus {
+  text-decoration: none;
+  color: #cc6916;
+}
+.link-pinterest {
+  color: #bd091f;
+}
+.link-pinterest:hover,
+.link-pinterest:focus {
+  text-decoration: none;
+  color: #8c0717;
+}
+.link-vimeo {
+  color: #17b3e8;
+}
+.link-vimeo:hover,
+.link-vimeo:focus {
+  text-decoration: none;
+  color: #128fba;
+}
+.link-behance {
+  color: #2c98cf;
+}
+.link-behance:hover,
+.link-behance:focus {
+  text-decoration: none;
+  color: #2379a5;
+}
+.link-codepen {
+  color: #1c1c1c;
+}
+.link-codepen:hover,
+.link-codepen:focus {
+  text-decoration: none;
+  color: #020202;
+}
+.link-foursquare {
+  color: #fa4778;
+}
+.link-foursquare:hover,
+.link-foursquare:focus {
+  text-decoration: none;
+  color: #f91554;
+}
+.link-reddit {
+  color: #545454;
+}
+.link-reddit:hover,
+.link-reddit:focus {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+.link-spotify {
+  color: #acd200;
+}
+.link-spotify:hover,
+.link-spotify:focus {
+  text-decoration: none;
+  color: #829f00;
+}
+.link-dribbble {
+  color: #ce366f;
+}
+.link-dribbble:hover,
+.link-dribbble:focus {
+  text-decoration: none;
+  color: #a82959;
+}
+.link-facebook {
+  color: #4b6daa;
+}
+.link-facebook:hover,
+.link-facebook:focus {
+  text-decoration: none;
+  color: #3b5687;
+}
+.link-angellist {
+  color: #000000;
+}
+.link-angellist:hover,
+.link-angellist:focus {
+  text-decoration: none;
+  color: #000000;
+}
+.link-bitbucket {
+  color: #205081;
+}
+.link-bitbucket:hover,
+.link-bitbucket:focus {
+  text-decoration: none;
+  color: #163758;
+}
+.work-image {
+  width: 45px;
+  display: block;
+  float: left;
+  margin-right: 15px;
+}
+#work-experience ul.list-unstyled > li div.content {
+  display: table-row;
+}
+#work-experience ul.list-unstyled > li div.content .work-image {
+  display: table-cell;
+}
+#work-experience ul.list-unstyled > li div.content .work-details {
+  display: table-cell;
+}
+.card-skills {
+  position: relative;
+}
+.skill-level {
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.skill-level .skill-progress {
+  position: absolute;
+  border-radius: 3px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: height 1s ease;
+}
+.skill-level .skill-progress.beginner {
+  height: 50%;
+  background: #e74c3c;
+}
+.skill-level .skill-progress.intermediate {
+  height: 70%;
+  background: #f1c40f;
+}
+.skill-level .skill-progress.advanced {
+  height: 80%;
+  background: #428bca;
+}
+.skill-level .skill-progress.master {
+  height: 95%;
+  background: #5cb85c;
+}
+.skill-info {
+  margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .skill-info {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .quote {
+    font-size: inherit;
+  }
+}
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+  .profile-card {
+    text-align: center;
+  }
+  .profile-pic {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .profile-pic img {
+    border-radius: 0;
+  }
+  .name-and-profession {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+  }
+  .contact-details .detail {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 0;
+  }
+  .floating-nav,
+  .floating-nav-trigger {
+    display: none;
+  }
+  .pagebreak {
+    page-break-before: always;
+  }
+}
+
+    </style>
+
+
+<script>
+      window.onload = function () {
+        var toggleFloatingMenu = function() {
+          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+        };
+
+        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+        $( ".js-tooltip" ).tooltip();
+        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
+          e.preventDefault();
+          toggleFloatingMenu();
+        });
+        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+          console.log("setting current lang to: " + userLang);
+          //$("#language-selected").val(userLang);
+            var buttonid = "lang-" + userLang;
+          $('#' + buttonid).toggleClass('active');
+      }
+    </script>
+<div class="container-fluid">
+<div class="row main clearfix">
+<a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+<i class="fa fa-bars"></i>
+<span class="close-icon">×</span>
+</a>
+<nav class="floating-nav js-floating-nav">
+<ul class="list-unstyled">
+<li>
+<a href="#profile">
+<i class="fa fa-user"></i>
+    <script>document.write(translateC('contact'));</script>
+</a>
+</li>
+<li>
+<a href="#skills">
+<i class="fa fa-code"></i>
+    <script>document.write(translateC('skills'));</script>
+</a>
+</li>
+<li>
+<a href="#about">
+<i class="fa fa-file-text-o"></i>
+    <script>document.write(translateC('about'));</script>
+</a>
+</li>
+<li>
+<a href="#work-experience">
+<i class="fa fa-building"></i>
+    <script>document.write(translateC('work-experience'));</script>
+</a>
+</li>
+<li>
+<a href="#education">
+<i class="fa fa-mortar-board"></i>
+    <script>document.write(translateC('education'));</script>
+</a>
+</li>
+<li>
+<a href="#training">
+<i class="fa fa-tachometer"></i>
+    <script>document.write(translateC('further-training'));</script>
+</a>
+</li>
+<li>
+<a href="#volunteer-work">
+<i class="fa fa-child"></i>
+    <script>document.write(translateC('volunteer-work'));</script>
+</a>
+</li>
+<li>
+<a href="#publications">
+<i class="fa fa-book"></i>
+    <script>document.write(translateC('publications'));</script>
+</a>
+</li>
+<li>
+<a href="#interests">
+<i class="fa fa-heart"></i>
+    <script>document.write(translateC('interests'));</script>
+</a>
+</li>
+
+</ul>
+</nav>
+
+<section class="col-md-3 card-wrapper profile-card-wrapper affix">
+   <div class="card profile-card" id="profile">
+       <div class="profile-wrapper">
+          <div class="profile-pic">
+             <img class="media-object img-circle center-block" data-src="holder.js/100x100" alt="Paco Alías" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA2-AAAAJGEzYmM0YTNlLTY5YmEtNDNjNy1iNGNhLTZlZmM2YjRlNGQ4YQ.jpg" itemprop="image">
+          </div>
+          <div class="name-and-profession">
+             <h3 class="text-center text-bolder name" itemprop="name"> Paco Alías</h3>
+             <h5 class="text-muted text-center" itemprop="jobTitle">Full-Stack Senior Software Engineer</h5>
+              <div class="lang-wrapper">
+                  <ul class="button-group">
+                      <li><a id="lang-en" class="uibutton" href="#" onClick="changeLang('en');"><script>document.write(translateC('translate-english'));</script></a></li>
+                      <li><a id="lang-es" class="uibutton" href="#" onClick="changeLang('es');"><script>document.write(translateC('translate-spanish'));</script></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="contact-details clearfix">
+              <div class="detail">
+                <span class="icon" title="Experiencie / Experiencia">
+                <i class="fa fa-lg fa-clock-o"></i>
+                </span>
+                <span class="info">
+                <script>document.write(agesAgo('2000'));document.write(" " + translateC('years-working'));</script>
+                </span>
+              </div>
+             <div class="detail">
+                <span class="icon" title="Location / Ubicación">
+                <i class="fa fa-lg fa-location-arrow"></i>
+                </span>
+                <span class="info">
+                Málaga, ES
+                </span>
+             </div>
+             <div class="detail">
+                <span class="icon" title="Email">
+                <i class="fa fa-lg fa-envelope"></i>
+                </span>
+                <span class="info">
+                dtodo1paco[at]gmail.com</span>
+                </span>
+             </div>
+             <div class="detail">
+                <span class="icon" title="Languages I speak / Idiomas que hablo">
+                <i class="fa fa-lg fa-language"></i>
+                </span>
+                <span class="info">
+                    <a href="#" onclick="changeLang('en')"><script>document.write(translateC('english'));</script></a>,
+                    <a href="#" onclick="changeLang('es')"><script>document.write(translateC('spanish'));</script></a>
+                </span>
+             </div>
+             <div class="social-links">
+                <a class="fa fa-github social-link link-github" href="https://githun.com/dtodo1paco" target="_blank"></a>
+                <a class="fa fa-linkedin social-link link-linkedin" href="https://es.linkedin.com/in/paco-al%C3%ADas-9a108a51" target="_blank"></a>
+                <a class="fa fa-twitter social-link link-twitter" href="https://twitter.com/dtodo1paco" target="_blank"></a>
+                <a class="fa fa-facebook social-link link-facebook" href="https://www.facebook.com/profile.php?id=100002259610959" target="_blank"></a>
+             </div>
+          </div>
+       </div>
+       <div class="background-details">
+          <div class="detail" id="skills">
+             <div class="icon">
+                <i class="fa fa-lg fa-code"></i>
+                <span class="mobile-title"><script>document.write(translateC('skills'));</script></span>
+             </div>
+             <div class="info">
+                <h4 class="title text-uppercase">
+                    <script>document.write(translateC('skills'));</script>
+                </h4>
+                <div class="content">
+                   <ul class="list-unstyled">
+                      <li class="card card-nested">
+                         <p>
+                            <strong><script>document.write(translateC('development'));</script></strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Java</span>
+                            <span class="label label-keyword">React</span>
+                            <span class="label label-keyword">AngularJS</span>
+                            <span class="label label-keyword">javascript</span>
+                            <span class="label label-keyword">Python</span>
+                            <span class="label label-keyword">Web development</span>
+                            <span class="label label-keyword">Git</span>
+                            <span class="label label-keyword">JSF</span>
+                            <span class="label label-keyword">Struts</span>
+                         </div>
+                      </li>
+                      <li class="card card-nested">
+                         <p>
+                            <strong><script>document.write(translateC('platforms'));</script></strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Liferay</span>
+                            <span class="label label-keyword">Nuxeo</span>
+                            <span class="label label-keyword">OpenXava</span>
+                            <span class="label label-keyword">Mirth</span>
+                            <span class="label label-keyword">Django</span>
+                         </div>
+                      </li>
+                      <li class="card card-nested">
+                         <p>
+                            <strong><script>document.write(translateC('databases'));</script></strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Postgresql</span>
+                            <span class="label label-keyword">MySQL</span>
+                            <span class="label label-keyword">Elasticsearch</span>
+                            <span class="label label-keyword">MongoDB</span>
+                            <span class="label label-keyword">Oracle</span>
+                            <span class="label label-keyword">MSSQL</span>
+                         </div>
+                      </li>
+                      <li class="card card-nested">
+                         <p>
+                            <strong><script>document.write(translateC('management'));</script></strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Agile</span>
+                            <span class="label label-keyword">Scrum</span>
+                            <span class="label label-keyword">Kanban</span>
+                            <span class="label label-keyword">Project mgmnt.</span>
+                            <span class="label label-keyword">Product mgmnt.</span>
+                         </div>
+                      </li>
+                      <li class="card card-nested">
+                         <p>
+                            <strong>DevOps</strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Bourne Shell</span>
+                            <span class="label label-keyword">Python</span>
+                            <span class="label label-keyword">Task Automation</span>
+                            <span class="label label-keyword">Site24x7</span>
+                         </div>
+                      </li>
+                      <li class="card card-nested">
+                         <p>
+                            <strong>Middleware</strong>
+                         </p>
+                         <div class="space-top labels">
+                            <span class="label label-keyword">Mirth</span>
+                            <span class="label label-keyword">HL7</span>
+                            <span class="label label-keyword">XML</span>
+                            <span class="label label-keyword">SOAP</span>
+                            <span class="label label-keyword">REST</span>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+   </div>
+</section>
+
+
+
+<section class="col-md-9 card-wrapper pull-right">
+<div class="card background-card">
+<h4 class="text-uppercase text-bolder"><script>document.write(translateC('background'));</script></h4>
+<hr>
+<div class="background-details">
+
+      <div class="detail" id="about">
+         <div class="icon">
+            <i class="fa fa-lg fa-file-text-o"></i>
+            <span class="mobile-title"><script>document.write(translateC('about'));</script></span>
+         </div>
+         <div class="info">
+            <h4 class="title text-uppercase">
+               <script>document.write(translateC('about'));</script>
+            </h4>
+            <div class="content" itemprop="description">
+                <script>document.write(translateC('dtodo1paco-about'));</script>
+            </div>
+         </div>
+      </div>
+
+
+<div class="detail" id="work-experience">
+   <div class="icon">
+      <i class="fa fa-lg fa-building"></i>
+      <span class="mobile-title"><script>document.write(translateC('work-experience'));</script></span>
+   </div>
+   <div class="info">
+      <h4 class="title text-uppercase">
+          <script>document.write(translateC('work-experience'));</script>
+      </h4>
+      <ul class="list-unstyled">
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong><script>document.write(translateC('software-engineer'));</script></strong>,&nbsp;<script>document.write(translateC('self-employed'));</script>
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                         <script>document.write(translateC('may'));</script>, 2014 -
+                         <script>document.write(translateC('present'));</script>
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2014,04,01), new Date()));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-8'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('may'));</script>, 2014
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('present'));</script>
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2014,04,01), new Date()));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong>Product Delivery Engineer</strong>,&nbsp;Athento: Smart Document Management
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                     <script>document.write(translateC('sep'));</script>, 2014 -
+                     <script>document.write(translateC('nov'));</script>, 2017
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2014,08,01), new Date(2017,10,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                  <script>document.write(translate('dtodo1paco-work-experience-7'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('sep'));</script>, 2014
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('nov'));</script>, 2017
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2014,08,01), new Date(2017,10,01)));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong>Senior Software Arquitect</strong>,&nbsp;Primum Health IT S.L.
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                     <script>document.write(translateC('jan'));</script>, 2013 -
+                     <script>document.write(translateC('apr'));</script>, 2014
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2013,00,01), new Date(2014,05,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-6'));</script>
+                  </p>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('jan'));</script>, 2013
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('apr'));</script>, 2014
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2013,00,01), new Date(2014,05,01)));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong><script>document.write(translateC('development-team-manager'));</script></strong>,&nbsp;FeSalud
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                        <script>document.write(translateC('mar'));</script>, 2011 -
+                        <script>document.write(translateC('dec'));</script>, 2012
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2011,02,01), new Date(2012,11,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                    <script>document.write(translate('dtodo1paco-work-experience-5'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('mar'));</script>, 2011
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('dec'));</script>, 2012
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2011,02,01), new Date(2012,11,01)));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong><script>document.write(translateC('senior-analyst'));</script></strong>,&nbsp;Grupo Delaware
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                        <script>document.write(translateC('oct'));</script>, 2006 -
+                        <script>document.write(translateC('dec'));</script>, 2010
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2006,09,01), new Date(2010,11,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-4'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('oct'));</script>, 2006
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('dec'));</script>, 2010
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2006,09,01), new Date(2010,11,01)));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong><script>document.write(translateC('tests-manager'));</script></strong>,&nbsp;Tecsidel, S.A.
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                        <script>document.write(translateC('sep'));</script>, 2005 -
+                        <script>document.write(translateC('sep'));</script>, 2006
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2005,08,01), new Date(2006,08,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-3'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('sep'));</script>, 2005
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('sep'));</script>, 2006
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2005,08,01), new Date(2006,08,01)));</script>
+               </p>
+            </div>
+         </li>
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                     <strong><script>document.write(translateC('web-developer-manager'));</script></strong>,&nbsp;Mkz, Soluciones de Ingeniería
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                        <script>document.write(translateC('jan'));</script>, 2005 -
+                        <script>document.write(translateC('aug'));</script>, 2005
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                       <script>document.write(getDuration(new Date(2005,00,01), new Date(2005,08,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-2'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('jan'));</script>, 2005
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('aug'));</script>, 2005
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2005,00,01), new Date(2005,08,01)));</script>
+               </p>
+            </div>
+         </li>
+
+         <li class="card card-nested clearfix">
+            <div class="content has-sidebar">
+               <div class="work-details">
+                  <p class="clear-margin-sm">
+                      <strong><script>document.write(translateC('tests-engineer'));</script></strong>,&nbsp;Tecsidel, S.A.
+                  </p>
+                  <p class="text-muted visible-xs visible-sm">
+                     <small>
+                     <span class="space-right">
+                        <script>document.write(translateC('aug'));</script>, 2000 -
+                        <script>document.write(translateC('feb'));</script>, 2002
+                     </span>
+                     <span>
+                     <i class="fa fa-clock-o icon-left"></i>
+                        <script>document.write(getDuration(new Date(2000,07,01), new Date(2002,01,01)));</script>
+                     </span>
+                     </small>
+                  </p>
+                   <script>document.write(translate('dtodo1paco-work-experience-1'));</script>
+               </div>
+            </div>
+            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+               <p>
+                  <strong><script>document.write(translateC('joined'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('aug'));</script>, 2000
+               </p>
+               <p>
+                  <strong><script>document.write(translateC('left'));</script>:</strong>&nbsp;
+                   <script>document.write(translateC('feb'));</script>, 2002
+               </p>
+               <p>
+                  <i class="fa fa-clock-o icon-left"></i>
+                   <script>document.write(getDuration(new Date(2000,07,01), new Date(2002,01,01)));</script>
+               </p>
+            </div>
+         </li>
+
+      </ul>
+   </div>
+</div>
+
+<div class="detail" id="education">
+<div class="icon">
+<i class="fa fa-lg fa-mortar-board"></i>
+<span class="mobile-title"><script>document.write(translateC('education'));</script></span>
+</div>
+<div class="info">
+<h4 class="title text-uppercase">
+    <script>document.write(translateC('education'));</script>
+</h4>
+<div class="content">
+<ul class="list-unstyled">
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm">
+    <script>document.write(translateC('dtodo1paco-education-2.1'));</script>
+</p>
+<p class="visible-xs visible-sm text-muted">
+<small>
+    <script>document.write(translateC('oct'));</script>, 2001 -
+    <script>document.write(translateC('mar'));</script>, 2005
+</small>
+</p>
+<i>
+    <script>document.write(translateC('dtodo1paco-education-2.2'));</script>
+</i>
+<div class="space-top labels">
+<span class="label label-keyword">Java</span>
+<span class="label label-keyword">OpenGL</span>
+<span class="label label-keyword">XML</span>
+</div>
+</div>
+<div class="sidebar text-muted text-center hidden-xs hidden-sm">
+<p>
+<strong><script>document.write(translateC('started'));</script>:</strong>&nbsp;
+    <script>document.write(translateC('oct'));</script>, 2001
+</p>
+<p>
+<strong><script>document.write(translateC('completion'));</script>:</strong>&nbsp;
+    <script>document.write(translateC('mar'));</script>, 2005
+</p>
+</div>
+</li>
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm">
+    <script>document.write(translateC('dtodo1paco-education-1.1'));</script>
+</p>
+<p class="visible-xs visible-sm text-muted">
+<small>
+    <script>document.write(translateC('oct'));</script>, 1997 -
+    <script>document.write(translateC('jun'));</script>, 2001
+</small>
+</p>
+<i><script>document.write(translateC('dtodo1paco-education-1.2'));</script></i>
+<div class="space-top labels">
+<span class="label label-keyword">ASP 2</span>
+<span class="label label-keyword">HTML</span>
+<span class="label label-keyword">Javascript</span>
+<span class="label label-keyword">SQL Server</span>
+</div>
+</div>
+<div class="sidebar text-muted text-center hidden-xs hidden-sm">
+<p>
+<strong><script>document.write(translateC('started'));</script>:</strong>&nbsp;
+    <script>document.write(translateC('oct'));</script>, 1997
+</p>
+<p>
+<strong><script>document.write(translateC('completion'));</script>:</strong>&nbsp;
+    <script>document.write(translateC('jun'));</script>, 2001
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="detail" id="training">
+<div class="icon">
+<i class="fa fa-lg fa-tachometer"></i>
+<span class="mobile-title"><script>document.write(translateC('further-training'));</script></span>
+</div>
+<div class="info">
+<h4 class="title text-uppercase">
+ <script>document.write(translateC('further-training'));</script>
+</h4>
+<div class="content">
+<ul class="list-unstyled">
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm" itemprop="award">
+<script>document.write(translateC('dtodo1paco-further-training-2.1'));</script>
+</p>
+<p class="visible-xs visible-sm text-muted">
+<small>
+    <script>document.write(translateC('completion'));</script><script>document.write(translateC('jun'));</script>, 2015
+</small>
+</p>
+<p class="clear-margin">     <script>document.write(translateC('dtodo1paco-further-training-2.2'));</script></p>
+</div>
+<div class="sidebar text-muted text-center hidden-xs hidden-sm">
+<p>
+<strong>    <script>document.write(translateC('completion'));</script></strong>&nbsp;    <script>document.write(translateC('jun'));</script>, 2015
+</p>
+</div>
+</li>
+
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm" itemprop="award">
+    <script>document.write(translateC('dtodo1paco-further-training-1.1'));</script>
+</p>
+<p class="visible-xs visible-sm text-muted">
+<small>
+1998 - 2015
+</small>
+</p>
+
+<div class="space-top labels">
+<span class="label label-keyword">3 x Liferay Spain Symposium</span>
+<span class="label label-keyword">DNIe</span>
+<span class="label label-keyword">Project Management</span>
+<span class="label label-keyword">Intermediate Manager</span>
+<span class="label label-keyword">PL/SQL</span>
+<span class="label label-keyword">JSF</span>
+<span class="label label-keyword">J2EE tunning</span>
+<span class="label label-keyword">VB.NET</span>
+<span class="label label-keyword">Startup creation</span>
+<span class="label label-keyword">CORBA</span>
+<span class="label label-keyword">Artificial Intelligence</span>
+<span class="label label-keyword">ksh</span>
+<span class="label label-keyword">UML</span>
+<span class="label label-keyword">Oracle admin</span>
+<span class="label label-keyword">UNIX</span>
+<span class="label label-keyword">VB 5.0</span>
+</div>
+
+</div>
+<div class="sidebar text-muted text-center hidden-xs hidden-sm">
+<p>
+<strong>1998 - 2015</strong>
+</p>
+</div>
+
+
+</ul>
+
+
+</div>
+</div>
+</div>
+<div class="detail" id="volunteer-work">
+<div class="icon">
+<i class="fa fa-lg fa-child"></i>
+<span class="mobile-title"><script>document.write(translateC('volunteer-work'));</script></span>
+</div>
+<div class="info">
+<h4 class="title text-uppercase">
+    <script>document.write(translateC('volunteer-work'));</script>
+</h4>
+<div class="content">
+<ul class="list-unstyled">
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm">
+    <script>document.write(translateC('dtodo1paco-volunteer-work-1.1'));</script>
+<a href="http://apariv.com">APARiV</a>
+</p>
+<p class="visible-xs visible-sm text-muted">
+<small>
+    <script>document.write(translateC('oct'));</script>, 2014 -
+    <script>document.write(translateC('present'));</script>
+</small>
+</p>
+<p><script>document.write(translateC('dtodo1paco-volunteer-work-1.2'));</script></p>
+<ul>
+</ul>
+</div>
+<div class="sidebar hidden-xs hidden-sm text-muted text-center">
+<p>
+<strong>Since:</strong>&nbsp;
+    <script>document.write(translateC('oct'));</script>, 2014
+</p>
+<p>
+<strong>Until:</strong>&nbsp;
+    <script>document.write(translateC('present'));</script>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="detail" id="publications">
+<div class="icon">
+<i class="fa fa-lg fa-book"></i>
+<span class="mobile-title">    <script>document.write(translateC('publications'));</script>
+</span>
+</div>
+<div class="info">
+<h4 class="title text-uppercase">
+    <script>document.write(translateC('publications'));</script>
+</h4>
+<div class="content">
+<ul class="list-unstyled">
+<li class="card card-nested">
+<div class="content has-sidebar">
+<p class="clear-margin-sm">
+<strong>
+<a href="https://es.linkedin.com/pulse/carga-masiva-desatendida-de-documentos-en-athento-y-nuxeo-paco-al%C3%ADas" target="_blank">Carga masiva desatendida de documentos en Nuxeo</a>
+</strong>
+</p>
+<p class="">
+<small>
+    <script>document.write(translateC('published-on'));</script>: <script>document.write(translateC('feb'));</script>, 2016
+</small>
+</p>
+<p class="clear-margin-sm">
+<strong>
+<a href="http://cuadernoanimal.com" target="_blank">Cuaderno Animal: Cloud Veterinary Software</a>
+</strong>
+</p>
+<p class="">
+<small>
+    <script>document.write(translateC('published-on'));</script>: <script>document.write(translateC('jul'));</script>, 2014
+</small>
+</p>
+<p class="clear-margin-sm">
+<strong>
+<a href="http://apariv.com" target="_blank">APARiV: Animal Shelter Website</a>
+</strong>
+</p>
+<p class="">
+<small>
+    <script>document.write(translateC('published-on'));</script>: <script>document.write(translateC('jul'));</script>, 2014
+</small>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="detail" id="interests">
+<div class="icon">
+<i class="fa fa-lg fa-heart"></i>
+<span class="mobile-title"><script>document.write(translateC('interests'));</script></span>
+</div>
+<div class="info">
+<h4 class="title text-uppercase">
+    <script>document.write(translateC('interests'));</script>
+</h4>
+<div class="content">
+<ul class="list-unstyled">
+<li class="card card-nested">
+<div class="space-top labels">
+<span class="label label-keyword"><script>document.write(translateC('web-development'));</script></span>
+<span class="label label-keyword"><script>document.write(translateC('artificial-intelligence'));</script></span>
+<span class="label label-keyword"><script>document.write(translateC('effective-engineering'));</script></span>
+<span class="label label-keyword"><script>document.write(translateC('history'));</script></span>
+<span class="label label-keyword"><script>document.write(translateC('travelling'));</script></span>
+<span class="label label-keyword"><script>document.write(translateC('writting'));</script></span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</section>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+
+
+
+</body></html>
