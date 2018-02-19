@@ -19,7 +19,15 @@
 <title>Paco Alías</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script lang="javascript">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+
+<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+
+<script type="text/javascript">
 
     var userLang = navigator.language || navigator.userLanguage;
     var selectedLang = getParameterByName('lang');
@@ -224,6 +232,50 @@
             "en":'skills',
             "es":'competencias'
         },
+        'skills-algorithms':{
+            "en":'Algorithms',
+            "es":'Algoritmos'
+        },
+        'skills-problem-solving':{
+            "en":'p. solving',
+            "es":'resolutivo'
+        },
+        'skills-interfaces-design':{
+            "en":'Interfaces design',
+            "es":'Interfaces'
+        },
+        'skills-software-architect':{
+            "en":'software architect',
+            "es":'arquitectura'
+        },
+        'skills-tasks-automation':{
+            "en":'Tasks automation',
+            "es":'autom. de tareas'
+        },
+        'skills-learning':{
+            "en":'learning',
+            "es":'aprendizaje'
+        },
+        'skills-documenting':{
+            "en":'documenting',
+            "es":'documentación'
+        },
+        'skills-management':{
+            "en":'management',
+            "es":'gestión'
+        },
+        'skills-communication':{
+            "en":'communication',
+            "es":'comunicación'
+        },
+        'skills-leadership':{
+            "en":'leadership',
+            "es":'liderazgo'
+        },
+        'skills-avoiding-waste':{
+            "en":'avoiding waste',
+            "es":'productividad'
+        },
         'software-engineer': {
             "en": 'software engineer',
             "es": 'ingeniero de software'
@@ -341,16 +393,16 @@
             "es": "<ul><li>Desarrollo de plugins para plataformas ECM utilizando el modelo OSGi</li><li>Mantenimiento correctivo de sistemas de información orientado siempre a la creación/modificación de módulos del producto de forma que contribuyan a la ampliación y mejora del mismo.</li><li>Desarrollo de módulos para conectar diferentes tecnologías usando API (REST, SOAP).</li><li>Construcción de módulos de middleware basados en Mirth 3 para procesar mensajería médica y transformarla en información útil para los hospitales.</li><li>Tecnologías: Nuxeo (5.3.2 hasta 8.10), Elasticsearch, Java, Python, Django, Bourne Shell, Mirth, Javascript, PostgreSQL, Mongodb, MySQL,...</li><li>Desarrollo de pequeños programas para corregir masivamente datos, medir tiempos y controlar espacio y otros recursos limitantes.</li><li>Implementar un framework DevOps para automatizar tareas repetitivas.</li><li>Monitorizar sistemas e implementar sistemas de auto-recuperado para prevenir o minimizar las indisponibilidades del servicio.</li></ul>"
         },
         'dtodo1paco-work-experience-6': {
-            "en": "<p>Design and implementation of a #telemedicine platform for intensive patient monitoring #Liferay based.<br/>Using microservices to upload medical tests from a Tablet app and to push alerts/alarms when a medical trigger is fired. Collect usage data and extract some indexes to improve performance.</p>",
-            "es": "<p>Diseño e implementación de una plataforma de #telemedicina para monitorización intensiva de pacientes basada en #Liferay.<br/>Utilizando microservicios para cargar pruebas médicas desde una aplicación de Tablet y para informar de alertas y alarmas cuando los resultados disparen una alerta médica. Recolección de datos de uso para extraer algunos índices que permitan mejorar el desempeño.</p>"
+            "en": "<p>Design and implementation of a #telemedicine platform for intensive patient monitoring #Liferay based.<br/>Using #microservices to upload medical tests from medical devides to a Tablet app and then to a cloud platform to push alerts/alarms when a medical trigger is fired. All medical data codified with #HL7. Collect usage data and extract some indexes to improve performance.</p>",
+            "es": "<p>Diseño e implementación de una plataforma de #telemedicina para monitorización intensiva de pacientes basada en #Liferay.<br/>Utilizando microservicios para cargar pruebas médicas desde dispositivos a una aplicación de Tablet y luego a una plataforma en la nube para lanzar alarmas cuando los resultados disparen una alerta médica. Todos los datos médicos codificados con #HL7. Recolección de datos de uso para extraer algunos índices que permitan mejorar el desempeño.</p>"
         },
         'dtodo1paco-work-experience-5': {
-            "en": "<p>Project Management #eHealth related. Analyst, developer, test engineer and support, directly managing with providers and customers.<br/> Coordinating integrations with medical systems using HL7, elaborating requirements and funcional analysis as well as QA plans.</p>",
-            "es": "<p>Gestión de proyectos relacionados con #eSalud. Funciones de analista, desarrollador, ingeniero de pruebas y soporte, tratando directamente con clientes y proveedores.<br/>Coordinación de integraciones entre sistemas médicos usando HL7 y elaborando análisis de requisitos y funcional así como planes de pruebas.</p>"
+            "en": "<p>Project Management #eHealth related. Analyst, developer, test engineer and support, directly managing with providers and customers.<br/> Coordinating integrations with medical systems using HL7 (such as <a href='https://quierocuidarme.dkvsalud.es/revista-click/reserva-de-cita-online'>online medical appoinment for DKV Seguros</a>), elaborating requirements and funcional analysis as well as QA plans.</p>",
+            "es": "<p>Gestión de proyectos relacionados con #eSalud. Funciones de analista, desarrollador, ingeniero de pruebas y soporte, tratando directamente con clientes y proveedores.<br/>Coordinación de integraciones entre sistemas médicos usando HL7 (como el <a href='https://quierocuidarme.dkvsalud.es/revista-click/reserva-de-cita-online'>Cita Online para DKV Seguros</a>) y elaborando análisis de requisitos y funcional así como planes de pruebas.</p>"
         },
         'dtodo1paco-work-experience-4': {
-            "en": "<p>Development team manager as well as analyst, developer and internal project manager. Client support on incidents.</p>",
-            "es": "<p>Coordinador de desarrollos internos, analista, desarrollador y gestor de equipo de desarrollo. Soporte a cliente en incidencias.</p>"
+            "en": "<p>Development team manager as well as analyst, developer and internal project manager in Java dept. Client support on incidents.</p>",
+            "es": "<p>Coordinador de desarrollos internos, analista, desarrollador y gestor de equipo de desarrollo para el departamento de Java. Soporte a cliente en incidencias.</p>"
         },
         'dtodo1paco-work-experience-3': {
             "en": "<ul><li>Conducting system tests and QA</li><li>Documentation and testing for a PDA connected to the backend and for the web interface to access it (double access).</li><li>Technologies: ORACLE, ORACLE-IAS, SunOS 5.9, Visual C ++, proxies.</li></ul>",
@@ -393,20 +445,113 @@
         var value = e.options[e.selectedIndex].value;
         changeLang(value);
     }
+
+    /**
+     * Values:
+     * 1-2 - questioning
+     * 2-4 - learning
+     * 4-5 - practicing
+     * 5-7 - journering
+     * 7-9 - mastering
+     * 9-10 - contributing
+     * @param id
+     */
+    function drawSkills(id) {
+        console.log("drawing chart");
+        var myConfig = {
+            "type": "radar",
+            "scale-k": {
+                "aspect": "circle",
+                "item":{
+                    "font-size":9
+                },
+                "labels": [
+                    translateC('skills-problem-solving'),
+                    "QA",
+                    "Frontend",
+                    "Backend",
+                    "DevOps",
+                    translateC("skills-software-architect"),
+                    translateC("skills-algorithms"),
+                    translateC('skills-learning'),
+                    translateC('skills-tasks-automation'),
+                    translateC("skills-interfaces-design"),
+                    translateC('skills-communication'),
+                    translateC('skills-avoiding-waste'),
+                    translateC('skills-leadership')
+                ]
+            },
+            "legend":{
+                "align":"center",
+                "vertical-align":"bottom"
+            },
+            "plot": {
+                "aspect": "line",
+                "tooltip":{
+                    "text":"%t: %v"
+                }
+            },
+            "series": [
+                {
+                    "values": [9,9,6,8,8,8,7,8,7,8,7,0,0],
+                    "line-color":"#333399",
+                    "marker":{
+                        "type":"star5",
+                        "background-color":"white",
+                        "border-color":"#333399"
+                    },
+                    "text":translateC('technical-skills')
+                },
+                {
+                    "values": [8,0,0,0,0,0,8,7,6,7,8,8,7],
+                    "line-color":"#0d9e43",
+                    "marker":{
+                        "type":"gear5",
+                        "background-color":"white",
+                        "border-color":"#0d9e43"
+                    },
+                    "text":translateC('management-skills')
+                }
+
+            ]
+        };
+        zingchart.render({
+            id : id,
+            data : myConfig,
+            height: '100%',
+            width: '100%'
+        });
+    }
 </script>
 
 <style>
+
+    #skills-chart-license-text {
+        display: none;
+    }
+    #skills-chart {
+        width: auto;
+        height: 100%;
+        min-height: 300px;
+    }
+    .big {
+        font-size: 1.4em;
+    }
+    .medium {
+        font-size: 1em;
+    }
+    .small {
+        font-size: 0.75em;
+    }
     .lang-wrapper {
         text-align: center;
     }
-
     .button-group,
     .button-group li{
         display: inline-block;
         *display: inline;
         zoom: 1;
     }
-
     .button-group{
         font-size: 0; /* Inline block elements gap - fix */
         padding: 0;
@@ -539,7 +684,6 @@ p {
   display: inline-block;
   background: #7eb0db;
   color: white;
-  font-size: 0.9em;
   padding: 5px;
   border: 1px solid #357ebd;
 }
@@ -1167,15 +1311,14 @@ body {
         padding: 0px;
     }
 }
-
     </style>
 
 
 <script>
       window.onload = function () {
         var toggleFloatingMenu = function() {
-          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
-          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+            $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+            $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
         };
 
         $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
@@ -1189,8 +1332,11 @@ body {
           //$("#language-selected").val(userLang);
             var buttonid = "lang-" + userLang;
           $('#' + buttonid).toggleClass('active');
+          drawSkills('skills-chart');
       }
     </script>
+
+
 <div class="container-fluid">
 <div class="row main clearfix">
 <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
@@ -1327,24 +1473,30 @@ body {
                 </h4>
                 <div class="content">
                    <ul class="list-unstyled">
-                      <li class="card card-nested">
+                       <li class="card card-nested">
+                        <div id="skills-chart">
+                        </div>
+                       </li>
+                       <li class="card card-nested">
                          <p class="skill-section">
                             <strong><script>document.write(translateC('development'));</script></strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword">Java</span>
-                            <span class="label label-keyword">javascript</span>
-                            <span class="label label-keyword">ReactJS</span>
-                            <span class="label label-keyword">AngularJS</span>
-                            <span class="label label-keyword">jQuery</span>
-                            <span class="label label-keyword">NodeJS</span>
-                            <span class="label label-keyword">Python</span>
-                            <span class="label label-keyword">Web development</span>
-                            <span class="label label-keyword">Git</span>
-                            <span class="label label-keyword">JSF</span>
-                            <span class="label label-keyword">Struts</span>
-                            <span class="label label-keyword">Spring</span>
-                            <span class="label label-keyword">Hibernate</span>
+                            <span class="big label label-keyword">Java</span>
+                            <span class="big label label-keyword">javascript</span>
+                            <span class="medium label label-keyword">ReactJS</span>
+                            <span class="medium label label-keyword">AngularJS</span>
+                            <span class="medium label label-keyword">jQuery</span>
+                            <span class="medium label label-keyword">NodeJS</span>
+                            <span class="medium label label-keyword">Python</span>
+                            <span class="big label label-keyword">Web development</span>
+                            <span class="big label label-keyword">Git</span>
+                            <span class="medium label label-keyword">JSF</span>
+                            <span class="medium label label-keyword">Struts</span>
+                            <span class="medium label label-keyword">Spring</span>
+                            <span class="big label label-keyword">ant</span>
+                            <span class="big label label-keyword">maven</span>
+                            <span class="big label label-keyword">gulp</span>
                          </div>
                       </li>
                       <li class="card card-nested">
@@ -1352,12 +1504,12 @@ body {
                             <strong><script>document.write(translateC('platforms'));</script></strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword">Liferay</span>
-                            <span class="label label-keyword">Nuxeo</span>
-                            <span class="label label-keyword">OpenXava</span>
-                            <span class="label label-keyword">Mirth</span>
-                            <span class="label label-keyword">Django</span>
-                            <span class="label label-keyword">NodeJS</span>
+                            <span class="big label label-keyword">Liferay</span>
+                            <span class="big label label-keyword">Nuxeo</span>
+                            <span class="medium label label-keyword">OpenXava</span>
+                            <span class="big label label-keyword">Mirth</span>
+                            <span class="medium label label-keyword">Django</span>
+                            <span class="medium label label-keyword">NodeJS</span>
                          </div>
                       </li>
                       <li class="card card-nested">
@@ -1365,12 +1517,12 @@ body {
                             <strong><script>document.write(translateC('databases'));</script></strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword skill-advanced">Postgresql</span>
-                            <span class="label label-keyword">MySQL</span>
-                            <span class="label label-keyword">Elasticsearch</span>
-                            <span class="label label-keyword">MongoDB</span>
-                            <span class="label label-keyword">Oracle</span>
-                            <span class="label label-keyword">MSSQL</span>
+                            <span class="big label label-keyword skill-advanced">Postgresql</span>
+                            <span class="big label label-keyword">MySQL</span>
+                            <span class="medium label label-keyword">Elasticsearch</span>
+                            <span class="medium label label-keyword">MongoDB</span>
+                            <span class="small label label-keyword">Oracle</span>
+                            <span class="medium label label-keyword">MSSQL</span>
                          </div>
                       </li>
                       <li class="card card-nested">
@@ -1378,11 +1530,11 @@ body {
                             <strong><script>document.write(translateC('management'));</script></strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword">Agile</span>
-                            <span class="label label-keyword">Scrum</span>
-                            <span class="label label-keyword">Kanban</span>
-                            <span class="label label-keyword">Project mgmnt.</span>
-                            <span class="label label-keyword">Product mgmnt.</span>
+                            <span class="big label label-keyword">Agile</span>
+                            <span class="big label label-keyword">Scrum</span>
+                            <span class="big label label-keyword">Kanban</span>
+                            <span class="medium label label-keyword">Project mgmnt.</span>
+                            <span class="medium label label-keyword">Product mgmnt.</span>
                          </div>
                       </li>
                       <li class="card card-nested">
@@ -1390,22 +1542,33 @@ body {
                             <strong>DevOps</strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword">Bourne Shell</span>
-                            <span class="label label-keyword">Python</span>
-                            <span class="label label-keyword">Task Automation</span>
-                            <span class="label label-keyword">Site24x7</span>
+                            <span class="big label label-keyword">Bourne Shell</span>
+                            <span class="medium label label-keyword">Python</span>
+                            <span class="big label label-keyword">Task Automation</span>
+                            <span class="big label label-keyword">Site24x7</span>
                          </div>
                       </li>
+                       <li class="card card-nested">
+                           <p class="skill-section">
+                               <strong>QA</strong>
+                           </p>
+                           <div class="space-top labels">
+                               <span class="big label label-keyword">Runscope</span>
+                               <span class="big label label-keyword">Postman</span>
+                               <span class="big label label-keyword">Ghostinspector</span>
+                               <span class="medium label label-keyword">Selenium</span>
+                           </div>
+                       </li>
                       <li class="card card-nested">
                          <p class="skill-section">
-                            <strong>Middleware</strong>
+                            <strong>Interfaces</strong>
                          </p>
                          <div class="space-top labels">
-                            <span class="label label-keyword">Mirth</span>
-                            <span class="label label-keyword">HL7</span>
-                            <span class="label label-keyword">XML</span>
-                            <span class="label label-keyword">SOAP</span>
-                            <span class="label label-keyword">REST</span>
+                            <span class="big label label-keyword">Mirth</span>
+                            <span class="big label label-keyword">HL7</span>
+                            <span class="medium label label-keyword">XML</span>
+                            <span class="medium label label-keyword">SOAP</span>
+                            <span class="big label label-keyword">REST</span>
                          </div>
                       </li>
                    </ul>
@@ -2020,9 +2183,6 @@ body {
 </section>
 </div>
 </div>
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
 
 
 
