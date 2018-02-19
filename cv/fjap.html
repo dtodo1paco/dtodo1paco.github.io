@@ -446,6 +446,23 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
         changeLang(value);
     }
 
+
+    function updateSkills() {
+        $( "li.skills-collapsed" ).removeClass("horizontal-list");
+        $( "li.skills-collapsed" ).removeClass("vertical-list");
+        var anyHidden = false;
+        $( "li.skills-collapsed").children('div').each(function() {
+            console.log("--> searching " + this.nodeName);
+            anyHidden = anyHidden || $(this).hasClass("hidden");
+        });
+        if (anyHidden) {
+            $( "li.skills-collapsed" ).addClass("vertical-list");
+        } else {
+            $( "li.skills-collapsed" ).addClass("horizontal-list");
+        }
+
+    }
+
     /**
      * Values:
      * 1-2 - questioning
@@ -526,6 +543,50 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
 
 <style>
 
+    .skills-toggle {
+        display: none;
+        visibility: hidden;
+    }
+    .skills-toggle-label:before {
+        text-align: center;
+        content: '-';
+    }
+    .skills-toggle-label:hover {
+        color: #2d3e6a;
+    }
+
+    .skills-toggle:checked ~ label::before {
+        content: "+";
+    }
+
+    @media (max-width: 992px) {
+        .skills-expandable:not(.hidden) {
+            display: none;
+            visibility: hidden;
+        }
+        .skills-expandable.hidden {
+            display: inherit!important;
+            visibility: inherit!important;
+        }
+        .skills-toggle-label:before {
+            content: '+';
+        }
+        .skills-toggle:checked ~ label::before {
+             content: '-';
+        }
+        .skills-collapsed {
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+        .vertical-list {
+            float: inherit;
+        }
+        .horizontal-list {
+            float:left;
+        }
+
+    }
+
     #skills-chart-license-text {
         display: none;
     }
@@ -533,7 +594,19 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
         width: auto;
         height: 100%;
         min-height: 300px;
+        margin-left: -55px
     }
+    @media (max-width: 992px) {
+
+        #skills-chart-graph-id0 > text > tspan {
+            font-size: 11px!important;
+        }
+        #skills-chart-graph-id0 > text  {
+            padding: 10px;
+        }
+    }
+
+
     .big {
         font-size: 1.4em;
     }
@@ -1333,6 +1406,12 @@ body {
             var buttonid = "lang-" + userLang;
           $('#' + buttonid).toggleClass('active');
           drawSkills('skills-chart');
+
+          $(".skills-toggle").click(function(){
+              $(this).parent().siblings().toggleClass("hidden");
+              updateSkills();
+              //$(this).parent().parent().toggleClass("vertical-list");
+          });
       }
     </script>
 
@@ -1472,16 +1551,16 @@ body {
                     <script>document.write(translateC('skills'));</script>
                 </h4>
                 <div class="content">
+                    <div id="skills-chart">
+                    </div>
                    <ul class="list-unstyled">
-                       <li class="card card-nested">
-                        <div id="skills-chart">
-                        </div>
-                       </li>
-                       <li class="card card-nested">
+                       <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong><script>document.write(translateC('development'));</script></strong>
+                             <input class="skills-toggle" id="skills-development" type="checkbox">
+                             <label class="skills-toggle-label" for="skills-development"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword">Java</span>
                             <span class="big label label-keyword">javascript</span>
                             <span class="medium label label-keyword">ReactJS</span>
@@ -1498,12 +1577,14 @@ body {
                             <span class="big label label-keyword">maven</span>
                             <span class="big label label-keyword">gulp</span>
                          </div>
-                      </li>
-                      <li class="card card-nested">
+                       </li>
+                      <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong><script>document.write(translateC('platforms'));</script></strong>
+                            <input class="skills-toggle" id="skills-platforms" type="checkbox">
+                            <label class="skills-toggle-label" for="skills-platforms"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword">Liferay</span>
                             <span class="big label label-keyword">Nuxeo</span>
                             <span class="medium label label-keyword">OpenXava</span>
@@ -1512,11 +1593,13 @@ body {
                             <span class="medium label label-keyword">NodeJS</span>
                          </div>
                       </li>
-                      <li class="card card-nested">
+                      <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong><script>document.write(translateC('databases'));</script></strong>
+                             <input class="skills-toggle" id="skills-databases" type="checkbox">
+                             <label class="skills-toggle-label" for="skills-databases"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword skill-advanced">Postgresql</span>
                             <span class="big label label-keyword">MySQL</span>
                             <span class="medium label label-keyword">Elasticsearch</span>
@@ -1525,11 +1608,13 @@ body {
                             <span class="medium label label-keyword">MSSQL</span>
                          </div>
                       </li>
-                      <li class="card card-nested">
+                      <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong><script>document.write(translateC('management'));</script></strong>
+                             <input class="skills-toggle" id="skills-management" type="checkbox">
+                             <label class="skills-toggle-label" for="skills-management"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword">Agile</span>
                             <span class="big label label-keyword">Scrum</span>
                             <span class="big label label-keyword">Kanban</span>
@@ -1537,33 +1622,39 @@ body {
                             <span class="medium label label-keyword">Product mgmnt.</span>
                          </div>
                       </li>
-                      <li class="card card-nested">
+                      <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong>DevOps</strong>
+                             <input class="skills-toggle" id="skills-devops" type="checkbox">
+                             <label class="skills-toggle-label" for="skills-devops"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword">Bourne Shell</span>
                             <span class="medium label label-keyword">Python</span>
                             <span class="big label label-keyword">Task Automation</span>
                             <span class="big label label-keyword">Site24x7</span>
                          </div>
                       </li>
-                       <li class="card card-nested">
+                       <li class="card card-nested skills-collapsed horizontal-list">
                            <p class="skill-section">
                                <strong>QA</strong>
+                               <input class="skills-toggle" id="skills-qa" type="checkbox">
+                               <label class="skills-toggle-label" for="skills-qa"></label>
                            </p>
-                           <div class="space-top labels">
+                           <div class="space-top labels skills-expandable">
                                <span class="big label label-keyword">Runscope</span>
                                <span class="big label label-keyword">Postman</span>
                                <span class="big label label-keyword">Ghostinspector</span>
                                <span class="medium label label-keyword">Selenium</span>
                            </div>
                        </li>
-                      <li class="card card-nested">
+                      <li class="card card-nested skills-collapsed horizontal-list">
                          <p class="skill-section">
                             <strong>Interfaces</strong>
+                             <input class="skills-toggle" id="skills-ifaces" type="checkbox">
+                             <label class="skills-toggle-label" for="skills-ifaces"></label>
                          </p>
-                         <div class="space-top labels">
+                         <div class="space-top labels skills-expandable">
                             <span class="big label label-keyword">Mirth</span>
                             <span class="big label label-keyword">HL7</span>
                             <span class="medium label label-keyword">XML</span>
