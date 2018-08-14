@@ -208,6 +208,55 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
             "en":'platforms',
             "es":'plataformas'
         },
+        'portfolio-url-shortener-title': {
+            "en":'URL Shortener',
+            "es":'Acortador de URLs'
+        },
+        'portfolio-url-shortener-description': {
+            "en":'A simple URL shortener inspired by <a href="https://bit.ly">bit.ly</a> or <a href="https://goo.gl">goo.gl</a>. You can register an account and login to watch statistics of your shortened URLs. Implemented using #SpringBoot and #React tecnologies',
+            "es":'Un acortador de URLs sencillo inspirado en <a href="https://bit.ly">bit.ly</a> o <a href="https://goo.gl">goo.gl</a>. Puedes abrirte una cuenta y revisar las estadísticas de tus URLs acortadas. Implementado usando las tecnologías #SpringBoot y #React'
+        },
+        'portfolio-react-chatbot-title': {
+            "en":'Chatbot',
+            "es":'Robot para chatear'
+        },
+        'portfolio-react-chatbot-description': {
+            "en":'A chatbot client to manage a conversation using the AI engine Dialogflow from Google (incorporating #MachineLearing). It is implemented in #React16 using an external authentication app',
+            "es":'Un cliente de chat que permite mantener una conversación usando el motor de IA Dialogflow de Google (apoyado en #MachineLearning). Está implementado en #React16 y se apoya en autenticación externa.'
+        },
+        'portfolio-my-credentials-title': {
+            "en":'My credentials',
+            "es":'Mis credenciales'
+        },
+        'portfolio-my-credentials-description': {
+            "en":'This #nodeJS app offers an API to register, login and check user management authentication using #JWT Tokens',
+            "es":'Aplicación hecha en #nodeJS que ofrece una API para el registro, la autenticación y chequeo usando #JWT tokens'
+        },
+        'portfolio-cuadernoanimal-title': {
+            "en":'Cuaderno Animal',
+            "es":'Cuaderno Animal'
+        },
+        'portfolio-cuadernoanimal-description': {
+            "en":'This is a cloud veterinary software platform focused on animals health to help veterinarians tracing their patient\'s health with records, statistics, charts...',
+            "es":'Se trata de una plataforma de software veterinario en la nube enfocada en la salud de los animales para ayudar a los veterinarios con el seguimiento de la salud de sus pacientes con registros, estadísticas, gráficas...'
+        },
+        'portfolio-apariv-title': {
+            "en":'Web de APARiV (Animals Shelter)',
+            "es":'Web de APARiV (Protectora de animales)'
+        },
+        'portfolio-apariv-description': {
+            "en":'In 2014 I\'ve installed the association\'s portal and since then managing the platform (users, content, blog,...). The platform is based in Liferay and includes a custom portlet to manage the adoption dogs database and a search portlet to help people find a dog based on some common criteria',
+            "es":'En 2014 instalé el portal de la asociación y desde entonces vengo administrando la plataforma (usuarios, contenido, blogs,...). La plataforma se basa en Liferay e incluye un portlet propio para gestionar la base de datos de perros en adopción y un buscador para ayudar a la gente a encontrarlos'
+        },
+        'portfolio-js-title': {
+            "en":'JS frameworks Portlet',
+            "es":'JS frameworks Portlet'
+        },
+        'portfolio-js-description': {
+            "en":'A PoC to integrate JS frameworks such as React, Angular, Senna,... whatever SPA stuff in a Liferay portal using a custom portlet.',
+            "es":'Una prueba de concepto para integrar frameworks JS como React, Angular, Senna,... cualquiera que gestione SPAs en un portal Liferay utilizando un portlet'
+        },
+
         'present': {
             "en": 'present',
             "es": 'Actualmente'
@@ -542,6 +591,41 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
 </script>
 
 <style>
+    #portfolio {
+        display: grid;
+    }
+    #portfolio > .icon{
+        display: inline-flex;
+    }
+    #portfolio > .icon > i{
+        margin: auto;
+        margin-right: 1em;
+    }
+    .portfolio-link {
+        display: table-caption;
+    }
+    .portfolio-link p{
+        word-break: break-word;
+    }
+    .portfolio-link > .header {
+        display: flex;
+        float: left;
+        width: 70%;
+    }
+    .portfolio-link > .header > .title {
+        font-weight: bold;
+        color: #707070;
+        font-size: 16px;
+    }
+    .portfolio-link > .header > a {
+        padding-left: 1em;
+        margin: auto;
+    }
+
+    .portfolio-link > .screenshot > a > img {
+        height: 185px;
+        max-width: 200px;
+    }
 
     .avatar:hover {
         max-width: 15em;
@@ -616,7 +700,13 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
         .horizontal-list {
             float:left;
         }
-
+        .portfolio-link > .screenshot > img {
+            height: inherit;
+            max-width: 100%;
+        }
+        .portfolio-link {
+            display: table-cell;
+        }
     }
 
     #skills-chart-license-text {
@@ -1114,6 +1204,17 @@ body {
     padding-left: 15px;
     padding-right: 15px;
   }
+    .portfolio-link {
+        display: flex;
+    }
+    .portfolio-link > .header {
+        display: grid;
+        max-height: 130px
+    }
+    .portfolio-link > .screenshot {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
 }
 @media (max-width: 992px) {
   .contact-details .detail {
@@ -1355,6 +1456,20 @@ body {
   .skill-info {
     margin-left: 20px;
   }
+  .portfolio-link {
+      display: inline-grid;
+  }
+  .portfolio-link > .header {
+      display: -webkit-box;
+  }
+  .portfolio-link > .header > .title {
+      display: inherit;
+  }
+  #portfolio > .icon {
+      display: inline-block;
+  }
+
+
 }
 @media (max-width: 768px) {
   .quote {
@@ -1467,6 +1582,12 @@ body {
     <script>document.write(translateC('skills'));</script>
 </a>
 </li>
+    <li>
+        <a href="#portfolio">
+            <i class="fa fa-code"></i>
+            <script>document.write(translateC('portfolio'));</script>
+        </a>
+    </li>
 <li>
 <a href="#about">
 <i class="fa fa-file-text-o"></i>
@@ -1698,7 +1819,138 @@ body {
              </div>
           </div>
        </div>
-   </div>
+       <div class="background-details">
+           <div class="detail" id="portfolio">
+               <div class="icon">
+                   <i class="fa fa-lg fa-eye"></i>
+                   <span class="mobile-title"><script>document.write(translateC('portfolio'));</script></span>
+                   <h4 class="title text-uppercase">
+                       <script>document.write(translateC('portfolio'));</script>
+                   </h4>
+               </div>
+               <div class="info">
+                   <div class="card-wrapper">
+                       <div class="card-nested -3  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-url-shortener-title'));</script></h5>
+                                <a href="https://github.com/dtodo1paco/url-shortener">
+                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://dtodo1paco-url-shortener.herokuapp.com">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://dtodo1paco-url-shortener.herokuapp.com">
+                                    <img src="https://github.com/dtodo1paco/url-shortener/raw/master/images/demo.gif" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-url-shortener-description'));</script></p>
+                                </div>
+                            </span>
+                        </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-cuadernoanimal-title'));</script></h5>
+                                <a href="http://cuadernoanimal.com/">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="http://cuadernoanimal.com/">
+                                    <img src="http://cuadernoanimal.com/landing/images/cuadernoanimal_icon.png" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-cuadernoanimal-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-my-credentials-title'));</script></h5>
+                                <a href="https://github.com/dtodo1paco/my-credentials">
+                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://my-credentials.herokuapp.com/">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://my-credentials.herokuapp.com/">
+                                    <img src="https://github.com/dtodo1paco/my-credentials/raw/master/images/demo.gif" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-my-credentials-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-react-chatbot-title'));</script></h5>
+                                <a href="https://github.com/dtodo1paco/react-simple-chatbot">
+                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://dtodo1paco.github.io/react-simple-chatbot/">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://dtodo1paco.github.io/react-simple-chatbot/">
+                                    <img src="https://github.com/dtodo1paco/react-simple-chatbot/raw/master/screenshots/20180810_02.png" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-react-chatbot-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-apariv-title'));</script></h5>
+                                <a href="http://apariv.com/">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://www.youtube.com/watch?v=gCfUrathIVc">
+                                    <img src="https://dtodo1paco-url-shortener.herokuapp.com/7edae5ad" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-apariv-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-js-title'));</script></h5>
+                                <a href="https://github.com/dtodo1paco/js-frameworks-poc-portlet">
+                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://github.com/dtodo1paco/js-frameworks-poc-portlet">
+                                    <img src="https://github.com/dtodo1paco/js-frameworks-poc-portlet/raw/master/screenshots/react.png" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-js-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
 </section>
 
 
