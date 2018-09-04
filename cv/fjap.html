@@ -248,13 +248,13 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
             "en":'In 2014 I\'ve installed the association\'s portal and since then managing the platform (users, content, blog,...). The platform is based in Liferay and includes a custom portlet to manage the adoption dogs database and a search portlet to help people find a dog based on some common criteria',
             "es":'En 2014 instalé el portal de la asociación y desde entonces vengo administrando la plataforma (usuarios, contenido, blogs,...). La plataforma se basa en Liferay e incluye un portlet propio para gestionar la base de datos de perros en adopción y un buscador para ayudar a la gente a encontrarlos'
         },
-        'portfolio-js-title': {
-            "en":'JS frameworks Portlet',
-            "es":'JS frameworks Portlet'
+        'portfolio-population-title': {
+            "en":'My population',
+            "es":'Censo de población'
         },
-        'portfolio-js-description': {
-            "en":'A PoC to integrate JS frameworks such as React, Angular, Senna,... whatever SPA stuff in a Liferay portal using a custom portlet.',
-            "es":'Una prueba de concepto para integrar frameworks JS como React, Angular, Senna,... cualquiera que gestione SPAs en un portal Liferay utilizando un portlet'
+        'portfolio-population-description': {
+            "en":'A very simple demo Single Page Application (#SPA) using #python #Flask for REST API and to serve a #redux #React client app that manages 2 related entities and a service based on them',
+            "es":'Una aplicación (#SPA) de demostración usando #python #Flask para la API REST y para servir una aplicación cliente #React #redux que gestiona 2 entidades relacionadas y un servicio basado en ellas'
         },
 
         'present': {
@@ -1584,7 +1584,7 @@ body {
 </li>
     <li>
         <a href="#portfolio">
-            <i class="fa fa-code"></i>
+            <i class="fa fa-eye"></i>
             <script>document.write(translateC('portfolio'));</script>
         </a>
     </li>
@@ -1825,7 +1825,7 @@ body {
                    <i class="fa fa-lg fa-eye"></i>
                    <span class="mobile-title"><script>document.write(translateC('portfolio'));</script></span>
                    <h4 class="title text-uppercase">
-                       <script>document.write(translateC('portfolio'));</script>
+                       <a href="https://github.com/dtodo1paco?tab=repositories"><script>document.write(translateC('portfolio'));</script></a>
                    </h4>
                </div>
                <div class="info">
@@ -1913,6 +1913,27 @@ body {
                        </div>
                        <div class="card-nested  portfolio-link">
                             <span class="header">
+                                <h5 class="title"><script>document.write(translateC('portfolio-population-title'));</script></h5>
+                                <a href="https://github.com/dtodo1paco/python-with-redux">
+                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://my-population.herokuapp.com">
+                                    <i class="fa fa-lg fa-external-link"></i>
+                                </a>
+                            </span>
+                            <span class="screenshot">
+                                <a href="https://my-population.herokuapp.com">
+                                    <img src="https://raw.githubusercontent.com/dtodo1paco/python-with-redux/master/screenshots/demo.gif" />
+                                </a>
+                            </span>
+                            <span>
+                                <div class="content" itemprop="description">
+                                    <p><script>document.write(translateC('portfolio-population-description'));</script></p>
+                                </div>
+                            </span>
+                       </div>
+                       <div class="card-nested  portfolio-link">
+                            <span class="header">
                                 <h5 class="title"><script>document.write(translateC('portfolio-apariv-title'));</script></h5>
                                 <a href="http://apariv.com/">
                                     <i class="fa fa-lg fa-external-link"></i>
@@ -1926,24 +1947,6 @@ body {
                             <span>
                                 <div class="content" itemprop="description">
                                     <p><script>document.write(translateC('portfolio-apariv-description'));</script></p>
-                                </div>
-                            </span>
-                       </div>
-                       <div class="card-nested  portfolio-link">
-                            <span class="header">
-                                <h5 class="title"><script>document.write(translateC('portfolio-js-title'));</script></h5>
-                                <a href="https://github.com/dtodo1paco/js-frameworks-poc-portlet">
-                                    <i class="fa fa-lg fa-github" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                            <span class="screenshot">
-                                <a href="https://github.com/dtodo1paco/js-frameworks-poc-portlet">
-                                    <img src="https://github.com/dtodo1paco/js-frameworks-poc-portlet/raw/master/screenshots/react.png" />
-                                </a>
-                            </span>
-                            <span>
-                                <div class="content" itemprop="description">
-                                    <p><script>document.write(translateC('portfolio-js-description'));</script></p>
                                 </div>
                             </span>
                        </div>
