@@ -72,7 +72,7 @@ class Header extends Component {
               }
                 <NavItem id='download'>
                   <NavLink
-                      href={'/download/print_'+locale+'.pdf'}
+                      href={'/cv/build/download/print_'+locale+'.pdf'}
                   >
                     <i className="fas fa-file-download"></i>
                   </NavLink>

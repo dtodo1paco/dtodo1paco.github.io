@@ -1,4 +1,4 @@
-This is my resume, you can visit it at https://dtodo1paco.github.io/cv/
+This is my resume, you can visit it [here](https://dtodo1paco.github.io/cv/build/index.html)
 
 This is just a simple SPA to have my CV online with the following technologies:
 · [React 16](https://reactjs.org/)
