@@ -1,0 +1,61 @@
+@import "styles/colors";
+@import "styles/fonts";
+@import "styles/print";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+  font-size: 14px;
+  color: $color-foreground;
+  background-color: $color-background;
+}
+
+a {
+  color: $color-link;
+}
+a:hover {
+  color: $color-link-hover;
+  text-decoration: none;
+}
+.media-heading {
+  color: $color-title;
+  font-weight: 600;
+}
+
+
+@media (max-width: 420px) {
+  .hidden-xxxs {
+    display: none !important;
+  }
+}
+@media (max-width: 500px) {
+  .hidden-xxs {
+    display: none !important;
+  }
+}
+@media (min-width: 500px) {
+  .hidden-xs-up {
+    display: none !important;
+  }
+}
+
+
+
+
+.bg-brown {
+  background-color: #D7CCC8;
+}
+.bg-blue-grey {
+  background-color: #B0BEC5;
+}
+.color-plain {
+  color: $color-background;
+}
+.color-info {
+  color: #17a2b8;
+}
+
+
+
+

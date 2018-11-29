@@ -1,0 +1,66 @@
+@import "styles/colors.scss";
+
+.portfolio-cards {
+  .card {
+    margin: 0 0.5em;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 18em;
+    background-color: $color-foreground;
+    #image-container {
+      height: 10em;
+      width: 16em;
+    }
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
+    .card-subtitle {
+      font-size: 1.5rem;
+    }
+  }
+  p.card-text {
+    color: $color-background;
+  }
+  .card-title {
+    color: $color-background;
+    padding-left: 0.6em;
+    font-size: large;
+    line-height: 2em;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .cardCol {
+    margin: 1em 0;
+    min-height: 20em;
+    width: 20em;
+  }
+  .preview:hover {
+    z-index: 5000;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(2.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(2.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(2.5);
+    transition: all 200ms ease-in;
+    transform: scale(2.5);
+    overflow: visible;
+    position: relative;
+    top: 0;
+    img {
+      z-index: 5000;
+      -webkit-transition: all 200ms ease-in;
+      -webkit-transform: scale(2.5);
+      -ms-transition: all 200ms ease-in;
+      -ms-transform: scale(2.5);
+      -moz-transition: all 200ms ease-in;
+      -moz-transform: scale(2.5);
+      transition: all 200ms ease-in;
+      transform: scale(2.5);
+    }
+  }
+}
+

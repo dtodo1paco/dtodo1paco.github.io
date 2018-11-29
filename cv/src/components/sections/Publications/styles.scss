@@ -1,0 +1,48 @@
+@import "styles/colors.scss";
+
+#publications {
+
+  .image-container {
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .media-body > a{
+    margin-top: 7px;
+    margin-bottom: 15px;
+  }
+  .media-left {
+    max-width: 30%;
+  }
+  .subtitle {
+    font-weight: 800;
+  }
+  .preview:focus {
+    z-index: 5000;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(2);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(2);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(2);
+    transition: all 200ms ease-in;
+    transform: scale(2);
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 50%;
+    width: 30%;
+    img {
+      z-index: 5000;
+      -webkit-transition: all 200ms ease-in;
+      -webkit-transform: scale(2);
+      -ms-transition: all 200ms ease-in;
+      -ms-transform: scale(2);
+      -moz-transition: all 200ms ease-in;
+      -moz-transform: scale(2);
+      transition: all 200ms ease-in;
+      transform: scale(2);
+    }
+  }
+}

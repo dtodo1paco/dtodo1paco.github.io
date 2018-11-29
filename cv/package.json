@@ -1,0 +1,41 @@
+{
+  "name": "react-intl-resume",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "classnames": "^2.2.6",
+    "i": "^0.3.6",
+    "node-sass": "^4.10.0",
+    "npm": "^6.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-intl": "^2.4.0",
+    "react-vertical-timeline-component": "^2.3.1",
+    "reactstrap": "^6.5.0"
+  },
+  "homepage": "https://dtodo1paco.github.io/cv",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
+    "manage:translations": "node ./translationRunner.js",
+    "translate": "npm run extract:messages && npm run manage:translations"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "react-intl-cra": "^0.3.3",
+    "react-intl-translations-manager": "^5.0.1",
+    "react-scripts": "^2.1.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

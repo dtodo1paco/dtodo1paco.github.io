@@ -1,0 +1,732 @@
+[
+  {
+    "id": "app.components.Header.english",
+    "defaultMessage": "English",
+    "filepath": "src/components/Header/Contact/messages.js"
+  },
+  {
+    "id": "app.components.Header.spanish",
+    "defaultMessage": "Spanish",
+    "filepath": "src/components/Header/Contact/messages.js"
+  },
+  {
+    "id": "app.components.Header.years_working",
+    "defaultMessage": "years working",
+    "filepath": "src/components/Header/Contact/messages.js"
+  },
+  {
+    "id": "app.components.Header.disability_1",
+    "defaultMessage": "disability",
+    "filepath": "src/components/Header/Contact/messages.js"
+  },
+  {
+    "id": "app.components.Header.disability_2",
+    "defaultMessage": "partial remote required",
+    "filepath": "src/components/Header/Contact/messages.js"
+  },
+  {
+    "id": "app.components.Header.intro",
+    "defaultMessage": "Hi! You should not be seen this message",
+    "filepath": "src/components/Header/Title/messages.js"
+  },
+  {
+    "id": "app.components.Header.read_more",
+    "defaultMessage": "...",
+    "filepath": "src/components/Header/Title/messages.js"
+  },
+  {
+    "id": "app.components.sections.about.p1",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/About/messages.js"
+  },
+  {
+    "id": "app.components.sections.about.p2",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/About/messages.js"
+  },
+  {
+    "id": "app.components.sections.about.p3",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/About/messages.js"
+  },
+  {
+    "id": "app.components.sections.about.p4",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/About/messages.js"
+  },
+  {
+    "id": "app.components.sections.about.p5",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/About/messages.js"
+  },
+  {
+    "id": "app.common.year",
+    "defaultMessage": "year",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.course",
+    "defaultMessage": "course",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.length",
+    "defaultMessage": "length",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-eoi-master",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-liferay-symp-III",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-incidents-ITSMF",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-liferay-symp-II",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-liferay-eticom",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-dnie-inteco",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-project-management-destreza",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-intermediate-management-tea-cegos",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-english-eLogos",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-plsql-cedeco",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-jsf-cedeco",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-tunning-java-exes",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-vbnet-cedeco",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-english-tecsidel",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-entrepreneur-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-company-creation-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-web-ftp-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-corba-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-agents-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-internet-tecsidel",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-ksh-tecsidel",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-uml-tecsidel",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-oracle-cronos",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-unix-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-java-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.further-training.ft-vb50-usal",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/FurtherTraining/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.effective-engineering-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.web-development-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.software-architecture-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.artificial-intelligence-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.problem-solving-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.history-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.travelling-title",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.effective-engineering-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.web-development-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.software-architecture-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.artificial-intelligence-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.problem-solving-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.history-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.interests.travelling-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Interests/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.url-shortener-title",
+    "defaultMessage": "URL Shortener",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.url-shortener-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.cuadernoanimal-title",
+    "defaultMessage": "Cuaderno Animal",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.cuadernoanimal-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.my-credentials-title",
+    "defaultMessage": "My credentials",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.my-credentials-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.chatbot-title",
+    "defaultMessage": "Chatbot",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.chatbot-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.population-title",
+    "defaultMessage": "Population counter",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.population-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.apariv-title",
+    "defaultMessage": "APARiV",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.apariv-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.this-title",
+    "defaultMessage": "This Resume",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.this-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.athento-title",
+    "defaultMessage": "Plugins for Nuxeo",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.components.sections.portfolio.athentos-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Portfolio/messages.js"
+  },
+  {
+    "id": "app.common.visit",
+    "defaultMessage": "Visit",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-athento-title",
+    "defaultMessage": "Carga masiva desatendida de documentos en Nuxeo",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-athento-description",
+    "defaultMessage": "Automatización de tareas",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-athento-text",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-morsa-title",
+    "defaultMessage": "MOrSA",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-morsa-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.publications.pub-morsa-text",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Publications/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.analytical",
+    "defaultMessage": "analytical",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.confidence",
+    "defaultMessage": "confidence",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.creativity",
+    "defaultMessage": "creativity",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.adaptability",
+    "defaultMessage": "adaptability",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.collaboration",
+    "defaultMessage": "collaboration",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.communication",
+    "defaultMessage": "communication",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.empathy",
+    "defaultMessage": "empathy",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.patience",
+    "defaultMessage": "patience",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.humility",
+    "defaultMessage": "humility",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.analytical-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.confidence-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.creativity-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.adaptability-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.collaboration-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.communication-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.empathy-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.patience-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.components.sections.skills.humility-desc",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Skills/messages.js"
+  },
+  {
+    "id": "app.common.from",
+    "defaultMessage": "from",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.common.to",
+    "defaultMessage": "to",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.common.present",
+    "defaultMessage": "present",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.common.years",
+    "defaultMessage": "years",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.common.months",
+    "defaultMessage": "months",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-own",
+    "defaultMessage": "self employed",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fullstack-engineer-title",
+    "defaultMessage": "Fullstack Senior Software Engineer",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fullstack-engineer-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fullstack-developer-title",
+    "defaultMessage": "Fullstack Senior Software Developer",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fullstack-developer-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-athento",
+    "defaultMessage": "Athento",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-athento-title",
+    "defaultMessage": "Product Delivery Engineer",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-athento-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-primum",
+    "defaultMessage": "Primum Health S.L.",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-primum-title",
+    "defaultMessage": "Senior Software Architect",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-primum-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-fesalud",
+    "defaultMessage": "FeSalud, Fundación para la eSalud",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fesalud-title",
+    "defaultMessage": "Development Team Manager",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-fesalud-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-delaware",
+    "defaultMessage": "Grupo Delaware",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-delaware-title",
+    "defaultMessage": "Development Team Manager",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-delaware-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-tecsidel",
+    "defaultMessage": "Tecsidel, S.A.",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-tecsidel-2-title",
+    "defaultMessage": "QA Manager",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-tecsidel-2-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-tecsidel-1-title",
+    "defaultMessage": "QA Engineer",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-tecsidel-1-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-mkz",
+    "defaultMessage": "Mkz, Soluciones de Ingeniería",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-mkz-title",
+    "defaultMessage": "Head of Development",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-mkz-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.company-usal",
+    "defaultMessage": "Universidad de Salamanca",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-usal-2-title",
+    "defaultMessage": "Information Technology, Engineering",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-usal-2-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-usal-1-title",
+    "defaultMessage": "Computer Systems, Engineering",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-usal-1-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.common.visit",
+    "defaultMessage": "Visit",
+    "filepath": "src/components/sections/VolunteerWork/messages.js"
+  },
+  {
+    "id": "app.components.sections.volunteerWork.apariv-title",
+    "defaultMessage": "APARiV",
+    "filepath": "src/components/sections/VolunteerWork/messages.js"
+  },
+  {
+    "id": "app.components.sections.volunteerWork.apariv-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/VolunteerWork/messages.js"
+  },
+  {
+    "id": "app.components.sections.volunteerWork.brazadas-title",
+    "defaultMessage": "Brazadas Solidarias",
+    "filepath": "src/components/sections/VolunteerWork/messages.js"
+  },
+  {
+    "id": "app.components.sections.volunteerWork.brazadas-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/VolunteerWork/messages.js"
+  },
+  {
+    "id": "app.sections.about",
+    "defaultMessage": "about",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.skills",
+    "defaultMessage": "skills",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.portfolio",
+    "defaultMessage": "portfolio",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.workExperience",
+    "defaultMessage": "work experience",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.education",
+    "defaultMessage": "education",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.timeline",
+    "defaultMessage": "work experience & education",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.furtherTraining",
+    "defaultMessage": "further training",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.volunteerWork",
+    "defaultMessage": "Volunteer work",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.publications",
+    "defaultMessage": "publications",
+    "filepath": "src/data/sections/messages.js"
+  },
+  {
+    "id": "app.sections.interests",
+    "defaultMessage": "interests",
+    "filepath": "src/data/sections/messages.js"
+  }
+]

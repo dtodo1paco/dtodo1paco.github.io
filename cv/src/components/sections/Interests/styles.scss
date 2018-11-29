@@ -1,0 +1,13 @@
+@import "styles/colors.scss";
+
+#publications {
+
+  .image-container {
+    max-height: 12em;
+    max-width: 10em;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

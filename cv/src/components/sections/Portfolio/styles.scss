@@ -1,0 +1,15 @@
+#portfolio {
+  .title-header {
+    display: flex;
+    justify-content: space-around;
+    h1 {
+      margin-left:0; margin-right:auto;
+    }
+    .repo-link {
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      margin-top: auto;
+    }
+  }
+}

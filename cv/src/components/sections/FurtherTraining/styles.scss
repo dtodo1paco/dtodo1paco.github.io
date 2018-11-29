@@ -1,0 +1,21 @@
+#furtherTraining {
+  .title-header {
+    display: flex;
+    justify-content: space-around;
+    .title {
+      margin-left:0; margin-right:auto;
+    }
+    .dropdown {
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      margin-top: auto;
+      .btn {
+        font-size: 1.5rem;
+        padding: 0.1rem 0.5rem;
+      }
+    }
+  }
+
+
+}

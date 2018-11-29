@@ -1,0 +1,32 @@
+/*
+ * Content
+ */
+
+.content {
+  margin: 1em 1em;
+}
+
+.content h1.title > span {
+  font-variant-caps: all-small-caps;
+  font-weight: bold;
+  color: white;
+  font-size: x-large;
+}
+.content h1.title > span.separator {
+  margin: 0 0.3em;
+  font-size: xx-large;
+}
+
+
+.content h1.title > i {
+  font-size: large;
+  margin-right: 0.5em;
+}
+
+.content .text > span {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  text-align: justify;
+  display: block;
+  margin: 0.5rem auto;
+}

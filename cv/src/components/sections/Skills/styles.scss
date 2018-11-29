@@ -1,0 +1,39 @@
+@import "styles/colors.scss";
+
+.tooltip-inner {
+  background-color: $color-foreground;
+  color: $color-background;
+}
+
+#skills {
+  .low-padding-cols > div {
+    padding: 5px;
+  }
+  .progress {
+    height: inherit;
+  }
+  .progress-bar {
+    background-image: initial;
+    height: 2.5rem;
+  }
+  .skill-item {
+    font-size: 1.1rem;
+  }
+  .skill-weight-1 {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .text {
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    .skill-item:hover {
+      transform: scale(2.5);
+      color: $color-title;
+      position: relative;
+      left: 55%;
+    }
+  }
+
+}
