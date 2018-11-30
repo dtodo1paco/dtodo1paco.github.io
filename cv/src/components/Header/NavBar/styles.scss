@@ -30,6 +30,10 @@
   .navbar-brand {
     margin-left:1em; margin-right:auto;
     padding-left: 0;
+    line-height: 20px;
+    .media:first-child {
+      margin-top: 0.2em;
+    }
     .media-left {
       max-height: 50px;
       max-width: 50px;

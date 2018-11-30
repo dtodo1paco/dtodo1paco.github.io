@@ -44,6 +44,7 @@
 }
 .header .list-group-item small {
   font-size: 70%;
+  display: block;
 }
 
 .header .list-group {
@@ -105,6 +106,7 @@
   margin: 0.5em 0.3em;
   color: #000000;
   font-variant: all-small-caps;
+  box-shadow: 0 3px 0 #6c757d;
 }
 .header .nav-tabs > li.nav-item > a.active {
   color: #dbdbdb;

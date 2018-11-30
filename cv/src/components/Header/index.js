@@ -29,7 +29,6 @@ class Header extends Component {
         </Col>
       );
     } else if (width > BP_S) {
-      console.log("-- BP_S: " + width);
       content = (
         <Col xs="12" className="person-details person-details-contents">
           <Portrait />
@@ -38,7 +37,6 @@ class Header extends Component {
         </Col>
       );
     } else {
-      console.log("-- BP_XS: " + width);
      content = (
        <Col xs="12" className="person-details person-details-contents">
         <Portrait />

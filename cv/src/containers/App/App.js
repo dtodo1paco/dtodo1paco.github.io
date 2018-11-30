@@ -47,9 +47,9 @@ class App extends Component {
     let newHeaderHeight = BP.find( pair =>
       width <= pair.width
     ).height;
-    console.log("size: " + width +" x " + newHeaderHeight);
+    // console.log("size: " + width +" x " + newHeaderHeight);
     if (newHeaderHeight !== headerHeight) {
-      console.log("changing height size to : " + newHeaderHeight + " by width: " + width);
+      // console.log("changing height size to : " + newHeaderHeight + " by width: " + width);
       this.setState({
         headerHeight: newHeaderHeight,
         headerWidth: window.innerWidth,
