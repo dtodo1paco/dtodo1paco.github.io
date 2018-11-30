@@ -35,7 +35,7 @@ const items = [
     github: "https://github.com/dtodo1paco/react-simple-chatbot/tree/master",
     image: "https://github.com/dtodo1paco/react-simple-chatbot/raw/master/screenshots/20180810_02.png",
     description: "chatbot-description",
-    tags: ["React", "axios", "REST", "google", "integration"],
+    tags: ["React", "axios", "REST", "google", "integration", "Heroku"],
   },
   {
     key: "population",
@@ -53,7 +53,7 @@ const items = [
     github: null,
     image: "https://dtodo1paco-url-shortener.herokuapp.com/7edae5ad",
     description: "apariv-description",
-    tags: ["Liferay", "Angular1.2", "Java", "MySQL"],
+    tags: ["Liferay", "Angular1.2", "Java", "Spring", "MySQL"],
   },
   {
     key: "this",
@@ -62,7 +62,7 @@ const items = [
     github: "https://github.com/dtodo1paco/dtodo1paco.github.io",
     image: CVdemo,
     description: "this-description",
-    tags: ["React", "react-intl", "jest"],
+    tags: ["React", "react-intl", "bootstrap", "jest", "reactstrap", "fontawesome", "sass"],
   },
   {
     key: "athento",
@@ -71,7 +71,7 @@ const items = [
     github: "https://github.com/pacoalias?tab=repositories",
     image: "https://jira.nuxeo.com/secure/attachment/65118/nuxeo-logo-3.png",
     description: "athento-description",
-    tags: ["Java", "maven", "Nuxeo"],
+    tags: ["Java", "maven", "Nuxeo", "OSGi"],
   },
 ];
 
