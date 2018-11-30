@@ -55,7 +55,7 @@ class NavBar extends Component {
     if (opacity === 0) return null;
     return (
       <Navbar id="top-nav-bar" color="light" light expand="md" sticky="top" style={{ opacity, borderBottomWidth }}>
-        <NavbarBrand>
+        <NavbarBrand  tag="div">
           <Media>
             <Media left>
               <Media src={portrait} />
