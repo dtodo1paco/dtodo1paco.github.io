@@ -85,7 +85,7 @@ export const expertise = [
     { weight: 1, text: "QA" },
     { text: "automated tests" },
     { weight: 1, text: "TDD & DDD" },
-    { weight: 1, text: "clear code & git" },
+    { weight: 1, text: "clean code & git" },
     { text: "PRs & code rewiew" },
   ],
 ];
