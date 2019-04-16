@@ -505,6 +505,21 @@
     "filepath": "src/components/sections/Timeline/messages.js"
   },
   {
+    "id": "app.components.sections.timeline.company-codespace",
+    "defaultMessage": "Codespace Academy",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-codespace-teacher-title",
+    "defaultMessage": "Teacher",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-codespace-teacher-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
     "id": "app.components.sections.timeline.company-own",
     "defaultMessage": "self employed",
     "filepath": "src/components/sections/Timeline/messages.js"
