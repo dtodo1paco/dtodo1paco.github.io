@@ -7,6 +7,20 @@ const items = [
   {
     type: SECTION_ID_WORK_EXPERIENCE,
     date_join: {
+      year: 2019,
+      month: 0,
+    },
+    date_leave: null,
+    company: "company-codespace",
+    company_url: "https://www.codespaceacademy.com/",
+    subtitle: "Málaga",
+    title: "position-codespace-teacher-title",
+    description: "position-codespace-teacher-description",
+    tags: ["React", "nodeJS", "express", "javascript", "jest", "enzyme", "MySQL", "MongoDB"],
+  },
+  {
+    type: SECTION_ID_WORK_EXPERIENCE,
+    date_join: {
       year: 2017,
       month: 11,
     },

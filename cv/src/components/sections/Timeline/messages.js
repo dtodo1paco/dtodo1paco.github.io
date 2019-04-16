@@ -21,6 +21,18 @@ const messages = defineMessages({
     id: 'app.common.months',
     defaultMessage: 'months',
   },
+  'company-codespace': {
+    id: 'app.components.sections.timeline.company-codespace',
+    defaultMessage: 'Codespace Academy',
+  },
+  'position-codespace-teacher-title': {
+    id: 'app.components.sections.timeline.position-codespace-teacher-title',
+    defaultMessage: 'Teacher',
+  },
+  'position-codespace-teacher-description': {
+    id: 'app.components.sections.timeline.position-codespace-teacher-description',
+    defaultMessage: '---',
+  },
   'company-own': {
     id: 'app.components.sections.timeline.company-own',
     defaultMessage: 'self employed',
