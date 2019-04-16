@@ -62,6 +62,15 @@ class Timeline extends Component {
                 ? new Date(item.date_leave.year, item.date_leave.month)
                 : new Date();
             const duration = getDuration(d_joined, d_left);
+            let hiddenDiv = null;
+            if (!educationDivCreated && item.type === S_EDUCATION.id) {
+              educationDivCreated = true;
+              hiddenDiv = <div key={S_EDUCATION.id} id={S_EDUCATION.pos}></div>;
+            }
+            if (!workDivCreated && item.type === S_WORK_EXPERIENCE.id) {
+              workDivCreated  = true;
+              hiddenDiv = <div key={S_WORK_EXPERIENCE.id} id={S_WORK_EXPERIENCE.pos}></div>;
+            }
             const element = (
               <VerticalTimelineElement
                 key={item.title}
@@ -91,6 +100,7 @@ class Timeline extends Component {
                 iconStyle={icon_style[item.type]}
                 icon={icons[item.type]}
               >
+              {hiddenDiv}
               <h3 className="vertical-timeline-element-title">
                 <span className="title">
                   <FormattedMessage {...messages[item.title]} />
@@ -126,14 +136,6 @@ class Timeline extends Component {
               </Collapse>
             </VerticalTimelineElement>
             );
-            if (!educationDivCreated && item.type === S_EDUCATION.id) {
-              educationDivCreated = true;
-              return <div key={S_EDUCATION.id} id={S_EDUCATION.pos}>{element}</div>;
-            }
-            if (!workDivCreated && item.type === S_WORK_EXPERIENCE.id) {
-              workDivCreated  = true;
-              return <div key={S_WORK_EXPERIENCE.id} id={S_WORK_EXPERIENCE.pos}>{element}</div>;
-            }
             return element;
           })}
         </VerticalTimeline>
