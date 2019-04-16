@@ -89,4 +89,35 @@
   .vertical-timeline-element {
     margin: 0!important;
   }
+
+  .company-image {
+    max-width: 6em!important;
+  }
+
+  .exp-container {
+    padding: 0;
+    margin-bottom: 1em;
+    list-style: none;
+
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .exp-item {
+    border: 0;
+  }
+
+  .exp1 {
+    flex: 0 0 auto;
+    margin:auto;
+  }
+  .exp2 {
+    padding-left: 1em;
+    flex: 1 1 auto;
+  }
 }
