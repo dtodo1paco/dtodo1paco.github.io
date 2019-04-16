@@ -1,5 +1,5 @@
 import CVdemo from 'images/CVdemo.gif';
-
+import APARIV from 'images/apariv.png';
 const items = [
   {
     key: "cuadernoanimal",
@@ -51,7 +51,7 @@ const items = [
     title: "apariv-title",
     url: "https://www.youtube.com/watch?v=gCfUrathIVc",
     github: null,
-    image: "https://dtodo1paco-url-shortener.herokuapp.com/7edae5ad",
+    image: APARIV,
     description: "apariv-description",
     tags: ["Liferay", "Angular1.2", "Java", "Spring", "MySQL"],
   },
