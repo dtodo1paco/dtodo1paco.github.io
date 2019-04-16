@@ -3,6 +3,17 @@ import {
   SECTION_ID_EDUCATION 
 } from 'data/sections';
 
+import codespace_image from 'images/codespace.png';
+import athento_image from 'images/athento-logo1-300x105.png';
+import primum_image from 'images/cropped-logo_primum-s.png';
+import fesalud_image from 'images/fesalud.png';
+import delaware_image from 'images/delaware.png';
+import tecsidel_image from 'images/tecsidel-logo.png';
+import mkz_image from 'images/mkz.jpeg';
+import usal_image from 'images/usal_logo.png';
+import dtodo1paco_image from 'images/favicon.ico';
+import eoi_image from 'images/eoi-300x172.gif';
+
 const items = [
   {
     type: SECTION_ID_WORK_EXPERIENCE,
@@ -13,6 +24,7 @@ const items = [
     date_leave: null,
     company: "company-codespace",
     company_url: "https://www.codespaceacademy.com/",
+    company_image: codespace_image,
     subtitle: "Málaga",
     title: "position-codespace-teacher-title",
     description: "position-codespace-teacher-description",
@@ -27,10 +39,30 @@ const items = [
     date_leave: null,
     company: "company-own",
     company_url: "#",
+    company_image: dtodo1paco_image,
     subtitle: "Málaga",
     title: "position-fullstack-engineer-title",
     description: "position-fullstack-engineer-description",
     tags: ["React", "redux", "nodeJS", "javascript", "jest", "enzyme", "Liferay", "Java", "SpringBoot", "JUnit", "Python", "PostgreSQL", "performance", "MongoDB"],
+  },
+  {
+    type: SECTION_ID_EDUCATION,
+    date: "2015 - 2015",
+    date_join: {
+      year: 2015,
+      month: 3,
+    },
+    date_leave: {
+      year: 2015,
+      month: 6,
+    },
+    company: "company-eoi",
+    company_url: "https://www.eoi.es/",
+    company_image: eoi_image,
+    subtitle: "Madrid",
+    title: "position-eoi-title",
+    description: "position-eoi-description",
+    tags: ["Innovation", "Master", "Management"],
   },
   {
     type: SECTION_ID_WORK_EXPERIENCE,
@@ -45,6 +77,7 @@ const items = [
     },
     company: "company-athento",
     company_url: "https://www.athento.com",
+    company_image: athento_image,
     subtitle: "Málaga",
     title: "position-athento-title",
     description: "position-athento-description",
@@ -62,6 +95,7 @@ const items = [
     },
     company: "company-own",
     company_url: "#",
+    company_image: dtodo1paco_image,
     subtitle: "Málaga",
     title: "position-fullstack-developer-title",
     description: "position-fullstack-developer-description",
@@ -79,6 +113,7 @@ const items = [
     },
     company: "company-primum",
     company_url: "http://www.primum.es/",
+    company_image: primum_image,
     subtitle: "Sevilla",
     title: "position-primum-title",
     description: "position-primum-description",
@@ -96,6 +131,7 @@ const items = [
     },
     company: "company-fesalud",
     company_url: "https://www.linkedin.com/company/fesalud/",
+    company_image: fesalud_image,
     subtitle: "Málaga",
     title: "position-fesalud-title",
     description: "position-fesalud-description",
@@ -113,6 +149,7 @@ const items = [
     },
     company: "company-delaware",
     company_url: "http://www.grupodelaware.com/",
+    company_image: delaware_image,
     subtitle: "Madrid",
     title: "position-delaware-title",
     description: "position-delaware-description",
@@ -130,6 +167,7 @@ const items = [
     },
     company: "company-tecsidel",
     company_url: "http://tecsidel.com/",
+    company_image: tecsidel_image,
     subtitle: "Madrid",
     title: "position-tecsidel-2-title",
     description: "position-tecsidel-2-description",
@@ -147,6 +185,7 @@ const items = [
     },
     company: "company-mkz",
     company_url: "http://www.mkzsoluciones.com/",
+    company_image: mkz_image,
     subtitle: "Zamora",
     title: "position-mkz-title",
     description: "position-mkz-description",
@@ -164,6 +203,7 @@ const items = [
     },
     company: "company-usal",
     company_url: "https://www.usal.es/departamento-de-informatica-y-automatica",
+    company_image: usal_image,
     subtitle: "Salamanca",
     title: "position-usal-2-title",
     description: "position-usal-2-description",
@@ -181,6 +221,7 @@ const items = [
     },
     company: "company-tecsidel",
     company_url: "http://tecsidel.com/",
+    company_image: tecsidel_image,
     subtitle: "Madrid",
     title: "position-tecsidel-1-title",
     description: "position-tecsidel-1-description",
@@ -198,6 +239,7 @@ const items = [
     },
     company: "company-usal",
     company_url: "https://www.usal.es/departamento-de-informatica-y-automatica",
+    company_image: usal_image,
     subtitle: "Salamanca",
     title: "position-usal-1-title",
     description: "position-usal-1-description",

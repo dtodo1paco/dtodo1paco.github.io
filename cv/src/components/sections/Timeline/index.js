@@ -71,6 +71,36 @@ class Timeline extends Component {
               workDivCreated  = true;
               hiddenDiv = <div key={S_WORK_EXPERIENCE.id} id={S_WORK_EXPERIENCE.pos}></div>;
             }
+
+            const details = (
+              <span>
+              <h3 className="vertical-timeline-element-title">
+                <span className="title">
+                  <FormattedMessage {...messages[item.title]} />
+                </span>
+                    {
+                    item.type === 'work' &&
+                    <Badge color="info" className="duration">
+                        { duration.years > 0 && <span className="duration-years">{duration.years} <FormattedMessage {...messages.years} /></span> }
+                        { duration.months } <FormattedMessage {...messages.months} />
+                    </Badge>
+                      }
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">
+                <FormattedMessage {...messages[item.company]} />
+                {item.company_url
+                  &&
+                  <a href={item.company_url} target="_blank" rel="noopener noreferrer" className="color-plain">
+                    {icons.link}
+                  </a>
+                }
+                <div>
+                  {icons.location}{item.subtitle}
+                </div>
+              </h4>
+              </span>
+            )
+
             const element = (
               <VerticalTimelineElement
                 key={item.title}
@@ -100,28 +130,18 @@ class Timeline extends Component {
                 iconStyle={icon_style[item.type]}
                 icon={icons[item.type]}
               >
+              <ul className="exp-container">
+                <li className="exp-item exp1">
+                  {item.company_image
+                    &&
+                    <img src={item.company_image} className="company-image" alt={item.company} />
+                  }
+                </li>
+                <li className="exp-item exp2">{details}</li>
+              </ul>
               {hiddenDiv}
-              <h3 className="vertical-timeline-element-title">
-                <span className="title">
-                  <FormattedMessage {...messages[item.title]} />
-                </span>
-                {
-                item.type === 'work' &&
-                  <Badge color="info" className="duration">
-                    { duration.years > 0 && <span className="duration-years">{duration.years} <FormattedMessage {...messages.years} /></span> }
-                    { duration.months } <FormattedMessage {...messages.months} />
-                  </Badge>
-                }
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">
-                {item.company_url
-                  && <a href={item.company_url} target="_blank" rel="noopener noreferrer" className="color-plain">
-                      {icons.link}
-                    </a>
-                }
-                <FormattedMessage {...messages[item.company]} />
-                {icons.location}{item.subtitle}
-              </h4>
+
+
               <div className="tags">
                 { item.tags.map(tag => (<Badge key={tag} color="secondary">{tag}</Badge>))}
                 <Badge color="info" onClick={() => this.toggle(i)} className="d-print-none">

@@ -53,6 +53,18 @@ const messages = defineMessages({
     id: 'app.components.sections.timeline.position-fullstack-developer-description',
     defaultMessage: '---',
   },
+  'company-eoi': {
+    id: 'app.components.sections.timeline.company-eoi',
+    defaultMessage: 'EOI',
+  },
+  'position-eoi-title': {
+    id: 'app.components.sections.timeline.position-eoi-title',
+    defaultMessage: 'Master in Innovation Management',
+  },
+  'position-eoi-description': {
+    id: 'app.components.sections.timeline.position-eoi-description',
+    defaultMessage: '---',
+  },
   'company-athento': {
     id: 'app.components.sections.timeline.company-athento',
     defaultMessage: 'Athento',

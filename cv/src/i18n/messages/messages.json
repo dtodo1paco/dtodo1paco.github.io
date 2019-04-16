@@ -545,6 +545,21 @@
     "filepath": "src/components/sections/Timeline/messages.js"
   },
   {
+    "id": "app.components.sections.timeline.company-eoi",
+    "defaultMessage": "EOI",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-eoi-title",
+    "defaultMessage": "Master in Innovation Management",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
+    "id": "app.components.sections.timeline.position-eoi-description",
+    "defaultMessage": "---",
+    "filepath": "src/components/sections/Timeline/messages.js"
+  },
+  {
     "id": "app.components.sections.timeline.company-athento",
     "defaultMessage": "Athento",
     "filepath": "src/components/sections/Timeline/messages.js"
