@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/cv/build/static/media/apariv.18d2b913.png"
   },
   {
-    "revision": "bbb115eaf2db19d48870",
-    "url": "/cv/build/static/css/main.5bf59022.chunk.css"
+    "revision": "f5dbff355873218240c6",
+    "url": "/cv/build/static/css/main.1ac6eec4.chunk.css"
   },
   {
     "revision": "50e3f333f4e4866c4f80160b43de0f58",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/cv/build/static/media/CVdemo.88302b9f.gif"
   },
   {
-    "revision": "bbb115eaf2db19d48870",
-    "url": "/cv/build/static/js/main.bbb115ea.chunk.js"
+    "revision": "f5dbff355873218240c6",
+    "url": "/cv/build/static/js/main.f5dbff35.chunk.js"
   },
   {
     "revision": "78827a3a6fd06d4a968bef926c97c647",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/cv/build/static/css/1.6c8c1b44.chunk.css"
   },
   {
-    "revision": "fbfb508c0c1e12677f2d4f912395c3c5",
+    "revision": "6d63bfc7c37ac3a0530c1e898876fb72",
     "url": "/cv/build/index.html"
   }
 ];
