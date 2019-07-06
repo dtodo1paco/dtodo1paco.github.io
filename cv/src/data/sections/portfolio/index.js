@@ -1,12 +1,14 @@
 import CVdemo from 'images/CVdemo.gif';
 import APARIV from 'images/apariv.png';
+import cuadernoanimal_image from 'images/cuadernoanimal_icon.png';
+
 const items = [
   {
     key: "cuadernoanimal",
     title: "cuadernoanimal-title",
     url: "http://cuadernoanimal.com/",
     github: null,
-    image: "http://cuadernoanimal.com/landing/images/cuadernoanimal_icon_verde.png",
+    image: cuadernoanimal_image,
     description: "cuadernoanimal-description",
     tags: ["React", "cloud", "IA", "NodeJS", "MongoDB"],
   },
