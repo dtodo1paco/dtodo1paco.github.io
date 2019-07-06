@@ -13,15 +13,34 @@ import mkz_image from 'images/mkz.jpeg';
 import usal_image from 'images/usal_logo.png';
 import dtodo1paco_image from 'images/favicon.ico';
 import eoi_image from 'images/eoi-300x172.gif';
+import bestseller_image from 'images/bestseller-logo.png'
 
 const items = [
   {
     type: SECTION_ID_WORK_EXPERIENCE,
     date_join: {
       year: 2019,
-      month: 0,
+      month: 4,
     },
     date_leave: null,
+    company: "company-bestseller",
+    company_url: "https://about.bestseller.com/about-us/our-company",
+    company_image: bestseller_image,
+    subtitle: "Málaga",
+    title: "position-bestseller-fullstack-title",
+    description: "position-bestseller-fullstack-description",
+    tags: ["Springboot", "Java", "Azure", "circle-ci", "Docker", "ORACLE", "MySQL", "JUnit", "maven"],
+  },
+  {
+    type: SECTION_ID_WORK_EXPERIENCE,
+    date_join: {
+      year: 2019,
+      month: 0,
+    },
+    date_leave: {
+      year: 2019,
+      month: 4,
+    },
     company: "company-codespace",
     company_url: "https://www.codespaceacademy.com/",
     company_image: codespace_image,

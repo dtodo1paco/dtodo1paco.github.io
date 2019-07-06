@@ -21,6 +21,18 @@ const messages = defineMessages({
     id: 'app.common.months',
     defaultMessage: 'months',
   },
+  'company-bestseller': {
+    id: 'app.components.sections.timeline.company-bestseller',
+    defaultMessage: 'Bestseller A/S',
+  },
+  'position-bestseller-fullstack-title': {
+    id: 'app.components.sections.timeline.position-bestseller-fullstack-title',
+    defaultMessage: 'Senior Fullstack Engineer',
+  },
+  'position-bestseller-fullstack-description': {
+    id: 'app.components.sections.timeline.position-bestseller-fullstack-description',
+    defaultMessage: '---',
+  },
   'company-codespace': {
     id: 'app.components.sections.timeline.company-codespace',
     defaultMessage: 'Codespace Academy',
