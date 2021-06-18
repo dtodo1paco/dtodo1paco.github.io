@@ -65,7 +65,7 @@ class Skills extends Component {
           expertise.map((group, i) => {
             const items = group.reduce((list, item) => {
               list.push(
-                  <span className="text" key={item.text}>
+                  <span id={`skills-columnd-${i}`} className="text" key={item.text}>
                     <span className={'skill-item skill-weight-' + item.weight}>{item.text}</span>
                   </span>
               );

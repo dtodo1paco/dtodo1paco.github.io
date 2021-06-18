@@ -30,9 +30,13 @@
     margin: 0 auto;
     .skill-item:hover {
       transform: scale(2.5);
-      color: $color-title;
+      color: $color-background;
       position: relative;
-      left: 55%;
+      left: 25%;
+      border-radius: 5px;
+      font-weight: unset;
+      padding: 0.2rem;
+      background-color: $color-title;
     }
   }
 
