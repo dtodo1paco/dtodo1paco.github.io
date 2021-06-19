@@ -1,3 +1,22 @@
+export const devSkills = [
+  { name:'Java', value:18, desc: 'java-desc' },
+  { name:'javascript', value:22, desc: 'js-desc' },
+  { name:'React', value:15, desc: 'react-desc' },
+  { name:'CSS', value:8, desc: 'css-desc' },
+  { name:'NodeJS', value:10, desc: 'node-desc' },
+  { name:'GraphQL', value:9, desc: 'graphQL-desc' },
+  { name:'python', value:8, desc: 'python-desc' },
+  { name:'bash', value:10, desc: 'bash-desc' },
+];
+
+export const engSkills = [
+  { name:'Tech lead', value:25, desc:'techLead-desc' },
+  { name:'Scrum', value:20, desc:'scrum-desc' },
+  { name:'Product M.', value:20, desc: 'productM-desc' },
+  { name:'Kanban', value:15, desc: 'kanban-desc' },
+  { name:'Project M.', value:20, desc: 'projectM-desc' },
+]
+
 export const skills = [
   { weight: 1, text: "creativity" },
   { weight: 1, text: "adaptability" },
