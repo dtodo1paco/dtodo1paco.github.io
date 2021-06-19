@@ -72,7 +72,7 @@ class NavBar extends Component {
               </Media>
               <Media className="subtitle">
                 <div className="typewriter">
-                  <span>Fullstack senior software engineer</span>
+                  <span>Fullstack Senior Software Architect &amp; Engineer</span>
                 </div>
               </Media>
             </Media>
