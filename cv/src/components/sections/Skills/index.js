@@ -32,13 +32,8 @@ class Skills extends Component {
         </h1>
         <Container fluid>
           <Row className="low-padding-cols">
-            <Col xs="12">
-              <Progress multi>
-                <Progress bar color="light" value="59" className="text-dark">Software development</Progress>
-                <Progress bar color="dark" value="41">Software engineering</Progress>
-              </Progress>
-            </Col>
             <Col xs="7">
+              <Progress className="progressTitle" color="swDev" value="100">Software development</Progress>
               <Progress multi>
                 {
                   devSkills.map( (skill, i) => {
@@ -63,6 +58,7 @@ class Skills extends Component {
               </Progress>
             </Col>
             <Col xs="5">
+              <Progress className="progressTitle" color="swEng" value="100">Software engineering</Progress>
               <Progress multi>
               {
                   engSkills.map( (skill, i) => {
