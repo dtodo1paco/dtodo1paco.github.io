@@ -129,19 +129,13 @@
   font-size: large;
 }
 
-@media (max-width: 421px) {
-  .header .person-details .portrait {
-    margin: 0.5em;
-  }
-  .header .person-details .contact {
-    margin: 0 0.5em;
-
-  }
+@media (max-width: 425px) {
   .header .person-details .portrait {
     margin: 1em;
   }
   .header .person-details .contact {
     margin: 0 1em;
+    width: 100%;
   }
   .header .person-details .titleHeader {
     max-width: 12em;
