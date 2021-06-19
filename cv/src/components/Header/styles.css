@@ -128,6 +128,11 @@
   padding: 5px 5px;
   font-size: large;
 }
+@media (max-width: 768px) {
+  .title-text {
+    font-size: smaller;
+  }
+}
 
 @media (max-width: 425px) {
   .header .person-details .portrait {
@@ -138,13 +143,19 @@
     width: 100%;
   }
   .header .person-details .titleHeader {
-    max-width: 12em;
+    max-width: 16em;
   }
   .header .person-details .titleText {
     margin: 1em 1em;
   }
 }
-@media (max-width: 315px) {
+@media (max-width: 375px) {
+  .header .person-details .titleHeader {
+    max-width: 16em;
+  }
+}
+
+@media (max-width: 320px) {
   .header .person-details .portrait {
     margin: 0.5em;
   }
@@ -152,7 +163,7 @@
     margin: 0 0.5em;
   }
   .header .person-details .titleHeader {
-    max-width: 8em;
+    max-width: 14em;
     font-size: smaller;
   }
 }
