@@ -16,6 +16,22 @@
     background-image: initial;
     height: 2.5rem;
   }
+  .progressTitle {
+    margin-bottom: 2px;
+  }
+  .progressTitleWrapper {
+    display: flex;
+    span {
+      float: left;
+      padding-left: 0.3rem;
+    }
+    span:first-child{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+  }
   .skill-item {
     font-size: 1.1rem;
     text-align: left;
@@ -23,6 +39,11 @@
   .skill-weight-1 {
     font-weight: bold;
     font-size: 1.2rem;
+  }
+  .skill-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .text {
     transition: transform .2s; /* Animation */
@@ -43,9 +64,6 @@
   }
 }
 
-.progressTitle {
-  margin-bottom: 2px;
-}
 .bg-swDev {
   background-color: rgb(76, 86, 114);
 }

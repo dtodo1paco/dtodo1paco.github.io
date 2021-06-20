@@ -64,7 +64,7 @@ export const expertise = [
     { text: "Docker" },
     { text: "Ansible" },
     { weight: 1, text: "kubernetes" },
-    { text: ".circleCI" },
+    { text: ".circle CI" },
     { weight: 1, text: "automation" },
   ],
   [

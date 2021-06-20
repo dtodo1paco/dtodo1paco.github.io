@@ -33,7 +33,11 @@ class Skills extends Component {
         <Container fluid>
           <Row className="low-padding-cols">
             <Col xs="7">
-              <Progress className="progressTitle" color="swDev" value="100">Software development</Progress>
+              <Progress className="progressTitle" color="swDev" value="100">
+                <span className="progressTitleWrapper">
+                  <span>Software</span><span>development</span>
+                </span>
+              </Progress>
               <Progress multi>
                 {
                   devSkills.map( (skill, i) => {
@@ -44,7 +48,7 @@ class Skills extends Component {
                         color={id}
                         value={skill.value}
                       >
-                        <span id={id}>
+                        <span id={id} className="skill-name">
                           {skill.name}
                         </span>
                       </Progress>
@@ -52,13 +56,17 @@ class Skills extends Component {
                         <FormattedMessage {...messages[skill.desc]} />
                       </UncontrolledTooltip>
                       </>
-                    )
+                    ) 
                   })
                 }
               </Progress>
             </Col>
             <Col xs="5">
-              <Progress className="progressTitle" color="swEng" value="100">Software engineering</Progress>
+              <Progress className="progressTitle" color="swEng" value="100">
+                <span className="progressTitleWrapper">
+                  <span>Software</span><span>engineering</span>
+                </span>
+              </Progress>
               <Progress multi>
               {
                   engSkills.map( (skill, i) => {
@@ -69,7 +77,7 @@ class Skills extends Component {
                         color={id}
                         value={skill.value}
                       >
-                        <span id={id}>
+                        <span id={id} className="skill-name">
                           {skill.name}
                         </span>
                       </Progress>
