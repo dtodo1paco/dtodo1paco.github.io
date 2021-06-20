@@ -135,9 +135,6 @@
 }
 
 @media (max-width: 425px) {
-  .header .person-details .portrait {
-    margin: 1em;
-  }
   .header .person-details .contact {
     margin: 0 1em;
     width: 100%;
@@ -146,13 +143,20 @@
     max-width: 16em;
   }
   .header .person-details .titleText {
-    margin: 1em 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 2em;
   }
 }
 @media (max-width: 375px) {
   .header .person-details .titleHeader {
     max-width: 16em;
   }
+  .title-text {
+    font-size: small;
+  }
+
 }
 
 @media (max-width: 320px) {
