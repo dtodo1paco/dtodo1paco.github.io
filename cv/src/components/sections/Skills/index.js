@@ -86,33 +86,24 @@ class Skills extends Component {
           <Row>
       {
           expertise.map((group, i) => {
+            const key = `skills-column-${i}`;
             const items = group.reduce((list, item) => {
               list.push(
-                  <span id={`skills-column-${i}`} className="text" key={item.text}>
+                  <span id={`${key}-${item.text}`} className="text" key={item.text}>
                     <span className={'skill-item skill-weight-' + item.weight}>{item.text}</span>
                   </span>
               );
               return list;
             }, []);
-            const lastColumn = i === expertise.length - 1;
-            if (lastColumn) {
-              return (
-                <Col xs="8" sm="auto" md="auto" key={i}>
-                  {items}
-                </Col>
-              );
-            } else {
-              return (
-                <Col xs="4" sm="4" md="2" lg="1" xl="1" key={i}>
-                  {items}
-                </Col>
-              );
-            }
+            return (
+              <Col xs="6" sm="4" md="3" lg="1" xl="1" key={key}>
+                {items}
+              </Col>
+            );
           })
           }
           </Row>
           <Row className="print-grid">
-
           {
               skills.sort(function(a, b){return 0.5 - Math.random()}).map( item => (
                 <Col xs={6} sm={4} md={3} lg={2} key={item.text} className="print-as-row">
