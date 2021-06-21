@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
+    "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o ./src/i18n/messages/messages.json",
     "manage:translations": "node ./translationRunner.js",
     "translate": "npm run extract:messages && npm run manage:translations"
   },
