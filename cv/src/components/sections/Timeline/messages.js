@@ -51,7 +51,7 @@ const messages = defineMessages({
   },
   'position-fullstack-engineer-title': {
     id: 'app.components.sections.timeline.position-fullstack-engineer-title',
-    defaultMessage: 'Fullstack Senior Software Engineer',
+    defaultMessage: 'Fullstack Senior Software Architect & Engineer',
   },
   'position-fullstack-engineer-description': {
     id: 'app.components.sections.timeline.position-fullstack-engineer-description',

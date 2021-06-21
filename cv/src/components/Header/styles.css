@@ -106,6 +106,7 @@
   margin: 0.5em 0.3em;
   color: #000000;
   font-variant: all-small-caps;
+  font-weight: 700;
   box-shadow: 0 3px 0 #6c757d;
 }
 .header .nav-tabs > li.nav-item > a.active {
@@ -127,29 +128,38 @@
   padding: 5px 5px;
   font-size: large;
 }
-
-@media (max-width: 421px) {
-  .header .person-details .portrait {
-    margin: 0.5em;
-  }
-  .header .person-details .contact {
-    margin: 0 0.5em;
-
-  }
-  .header .person-details .portrait {
-    margin: 1em;
-  }
-  .header .person-details .contact {
-    margin: 0 1em;
-  }
-  .header .person-details .titleHeader {
-    max-width: 12em;
-  }
-  .header .person-details .titleText {
-    margin: 1em 1em;
+@media (max-width: 768px) {
+  .title-text {
+    font-size: smaller;
   }
 }
-@media (max-width: 315px) {
+
+@media (max-width: 425px) {
+  .header .person-details .contact {
+    margin: 0 1em;
+    width: 100%;
+  }
+  .header .person-details .titleHeader {
+    max-width: 16em;
+  }
+  .header .person-details .titleText {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 2em;
+  }
+}
+@media (max-width: 375px) {
+  .header .person-details .titleHeader {
+    max-width: 16em;
+  }
+  .title-text {
+    font-size: small;
+  }
+
+}
+
+@media (max-width: 320px) {
   .header .person-details .portrait {
     margin: 0.5em;
   }
@@ -157,7 +167,7 @@
     margin: 0 0.5em;
   }
   .header .person-details .titleHeader {
-    max-width: 8em;
+    max-width: 14em;
     font-size: smaller;
   }
 }

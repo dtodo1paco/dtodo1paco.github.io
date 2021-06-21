@@ -16,12 +16,34 @@
     background-image: initial;
     height: 2.5rem;
   }
+  .progressTitle {
+    margin-bottom: 2px;
+  }
+  .progressTitleWrapper {
+    display: flex;
+    span {
+      float: left;
+      padding-left: 0.3rem;
+    }
+    span:first-child{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+  }
   .skill-item {
     font-size: 1.1rem;
+    text-align: left;
   }
   .skill-weight-1 {
     font-weight: bold;
     font-size: 1.2rem;
+  }
+  .skill-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .text {
     transition: transform .2s; /* Animation */
@@ -30,10 +52,61 @@
     margin: 0 auto;
     .skill-item:hover {
       transform: scale(2.5);
-      color: $color-title;
+      color: $color-background;
       position: relative;
-      left: 55%;
+      left: 25%;
+      border-radius: 5px;
+      font-weight: unset;
+      padding: 0.2rem;
+      background-color: $color-title;
+      text-align: left;
     }
   }
+}
 
+.bg-swDev {
+  background-color: rgb(76, 86, 114);
+}
+.bg-devSkills-0 {
+  background-color: rgb(68, 116, 160);
+}
+.bg-devSkills-1 {
+  background-color: rgb(83, 104, 87);
+}
+.bg-devSkills-2 {
+  background-color: rgb(156, 153, 97);
+}
+.bg-devSkills-3 {
+  background-color: rgb(150, 124, 103);
+}
+.bg-devSkills-4 {
+  background-color: rgb(104, 83, 99);
+}
+.bg-devSkills-5 {
+  background-color: rgb(178, 145, 201);
+}
+.bg-devSkills-6 {
+  background-color: rgb(180, 144, 144);
+}
+.bg-devSkills-7 {
+  background-color: rgb(167, 155, 182);
+}
+
+.bg-swEng {
+  background-color: rgb(106, 122, 104);
+}
+.bg-engSkills-0 {
+  background-color: rgb(148, 110, 135);
+}
+.bg-engSkills-1 {
+  background-color: rgb(184, 170, 125);
+}
+.bg-engSkills-2 {
+  background-color: rgb(140, 172, 128);
+}
+.bg-engSkills-3 {
+  background-color: rgb(148, 198, 207);
+}
+.bg-engSkills-4 {
+  background-color: rgb(87, 96, 128);
 }

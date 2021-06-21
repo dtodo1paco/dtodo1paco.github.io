@@ -6,8 +6,8 @@ import { NavLink } from 'reactstrap';
 const Title = (props) => (
   <div className="title">
     <h1>Paco Alías</h1>
-    <h2>Fullstack Senior Software Engineer</h2>
-    <p className="font-italic text-justify">
+    <h2>Fullstack Senior Software Architect &amp; Engineer </h2>
+    <p className="font-italic text-justify title-text">
       <FormattedMessage {...messages.intro} />
       <NavLink id="more" className="d-print-none" href="#0">
         <FormattedMessage {...messages.read_more} />
