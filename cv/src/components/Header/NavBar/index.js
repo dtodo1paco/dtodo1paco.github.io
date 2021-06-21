@@ -65,7 +65,7 @@ class NavBar extends Component {
                 <div id="left">Paco Alías</div>
                 <NavLink
                     id="download"
-                    href={'/cv/build/download/print_'+currentLocale+'.pdf'}
+                    href={'/cv/build/download/paco_alias_'+currentLocale+'.pdf'}
                 >
                   <i className="fas fa-file-download"></i>
                 </NavLink>
