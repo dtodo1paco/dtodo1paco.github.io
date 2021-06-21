@@ -29,7 +29,7 @@ const items = [
     subtitle: "Málaga",
     title: "position-bestseller-fullstack-title",
     description: "position-bestseller-fullstack-description",
-    tags: ["Springboot", "Java", "Azure", "circle-ci", "Docker", "ORACLE", "MySQL", "JUnit", "maven"],
+    tags: ["Springboot", "Java", "BFF", "GraphQL", "React", "Azure","GCP", "circle-ci", "kubernetes", "Docker", "OIDC", "ORACLE", "PostgreSQL", "MySQL", "Jest", "sinon", "JUnit", "maven"],
   },
   {
     type: SECTION_ID_WORK_EXPERIENCE,
